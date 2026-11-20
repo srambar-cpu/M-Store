@@ -9,413 +9,418 @@
 
 <style>
 :root {
-  --bg: #10131b;
-  --surface: #191e29;
-  --surface2: #222938;
-  --text: #f5f6fa;
-  --muted: #9ba5b7;
-  --accent: #8b78ff;
-  --accent2: #6b58e8;
-  --border: #2a3242;
+  --bg:#10131b;
+  --surface:#191e29;
+  --surface2:#222938;
+  --text:#f5f6fa;
+  --muted:#9ba5b7;
+  --accent:#8b78ff;
+  --border:#2a3242;
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,sans-serif;
 }
 
-button, input {
-  font: inherit;
+button,input {
+  font:inherit;
 }
 
 button {
-  cursor: pointer;
+  cursor:pointer;
 }
 
 header {
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 6%;
-  border-bottom: 1px solid var(--border);
-  background: #131722;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6%;
+  border-bottom:1px solid var(--border);
+  background:#131722;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  font-size: 23px;
-  font-weight: bold;
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-size:23px;
+  font-weight:bold;
 }
 
 .logo-icon {
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #a99aff, #6550df);
-  border-radius: 12px;
-  font-size: 25px;
+  width:40px;
+  height:40px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#a99aff,#6550df);
+  border-radius:12px;
+  font-size:25px;
 }
 
 .logo span {
-  color: var(--accent);
+  color:var(--accent);
 }
 
 .header-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display:flex;
+  gap:10px;
 }
 
 .header-actions button {
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: white;
-  border-radius: 25px;
-  padding: 10px 17px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:white;
+  border-radius:25px;
+  padding:10px 15px;
 }
 
-.header-actions .login {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: white;
-  font-weight: bold;
+.header-actions .login,
+.primary-btn {
+  background:var(--accent);
+  border-color:var(--accent);
+  color:white;
+  font-weight:bold;
 }
 
 main {
-  max-width: 1250px;
-  margin: auto;
-  padding: 35px 24px 80px;
+  max-width:1250px;
+  margin:auto;
+  padding:35px 24px 80px;
 }
 
 .hero {
-  min-height: 260px;
-  border-radius: 24px;
-  padding: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
+  min-height:260px;
+  border-radius:24px;
+  padding:42px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
   background:
-    radial-gradient(circle at 85% 20%, #7761dc66, transparent 35%),
-    linear-gradient(115deg, #292344, #171d2c 70%);
-  border: 1px solid #393254;
+    radial-gradient(circle at 85% 20%,#7761dc66,transparent 35%),
+    linear-gradient(115deg,#292344,#171d2c 70%);
+  border:1px solid #393254;
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width:600px;
 }
 
 .eyebrow {
-  color: #b9adff;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
+  color:#b9adff;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:2px;
+  margin-bottom:15px;
 }
 
 .hero h1 {
-  font-size: clamp(30px, 5vw, 47px);
-  margin-bottom: 14px;
+  font-size:clamp(30px,5vw,47px);
+  margin-bottom:14px;
 }
 
 .hero p {
-  color: #c2c5d2;
-  line-height: 1.6;
-  max-width: 480px;
+  color:#c2c5d2;
+  line-height:1.6;
 }
 
 .hero-art {
-  font-size: 115px;
-  padding: 10px 40px;
-  filter: drop-shadow(0 10px 25px #0008);
+  font-size:115px;
+  padding:10px 40px;
 }
 
 .search-area {
-  margin: 30px 0;
+  margin:30px 0;
 }
 
 .search-box {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 15px 19px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:15px 19px;
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
 .search-box input {
-  width: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: white;
-  font-size: 16px;
+  width:100%;
+  background:transparent;
+  border:none;
+  outline:none;
+  color:white;
+  font-size:16px;
 }
 
 .search-box input::placeholder {
-  color: var(--muted);
+  color:var(--muted);
 }
 
 .section-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 35px 0 18px;
-  gap: 12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:35px 0 18px;
+  gap:12px;
 }
 
 .section-heading h2 {
-  font-size: 22px;
+  font-size:22px;
 }
 
 .section-heading small {
-  color: var(--muted);
+  color:var(--muted);
 }
 
 .categories {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  padding-bottom: 8px;
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding-bottom:8px;
 }
 
 .category {
-  flex-shrink: 0;
-  border: 1px solid var(--border);
-  color: #c7ccda;
-  background: var(--surface);
-  border-radius: 25px;
-  padding: 10px 17px;
+  flex-shrink:0;
+  border:1px solid var(--border);
+  color:#c7ccda;
+  background:var(--surface);
+  border-radius:25px;
+  padding:10px 17px;
 }
 
 .category.active {
-  background: #7561e5;
-  border-color: #7561e5;
-  color: white;
+  background:#7561e5;
+  border-color:#7561e5;
+  color:white;
 }
 
 .app-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 17px;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:17px;
 }
 
 .app-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 17px;
-  border-radius: 17px;
-  cursor: pointer;
-  transition: .2s;
-  min-width: 0;
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:17px;
+  border-radius:17px;
+  cursor:pointer;
+  transition:.2s;
+  min-width:0;
 }
 
 .app-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-  background: var(--surface2);
+  transform:translateY(-4px);
+  border-color:var(--accent);
+  background:var(--surface2);
 }
 
 .app-icon {
-  width: 66px;
-  height: 66px;
-  border-radius: 17px;
-  display: grid;
-  place-items: center;
-  font-size: 35px;
-  margin-bottom: 15px;
-  background: linear-gradient(135deg, #4e5a83, #292f49);
+  width:66px;
+  height:66px;
+  border-radius:17px;
+  display:grid;
+  place-items:center;
+  font-size:35px;
+  margin-bottom:15px;
+  background:linear-gradient(135deg,#4e5a83,#292f49);
 }
 
 .app-card h3 {
-  font-size: 16px;
-  margin-bottom: 7px;
-  overflow-wrap: anywhere;
+  font-size:16px;
+  margin-bottom:7px;
+  overflow-wrap:anywhere;
 }
 
 .app-card p {
-  color: var(--muted);
-  font-size: 13px;
-  margin-bottom: 12px;
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:12px;
 }
 
 .app-meta {
-  display: flex;
-  justify-content: space-between;
-  color: #b5bdcd;
-  font-size: 12px;
+  display:flex;
+  justify-content:space-between;
+  color:#b5bdcd;
+  font-size:12px;
 }
 
 .empty {
-  color: var(--muted);
-  text-align: center;
-  padding: 35px;
-  grid-column: 1 / -1;
+  color:var(--muted);
+  text-align:center;
+  padding:35px;
+  grid-column:1/-1;
 }
 
 .developer-banner {
-  margin-top: 50px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  background: linear-gradient(110deg, #202b3c, #1a1c2b);
-  padding: 27px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+  margin-top:50px;
+  border:1px solid var(--border);
+  border-radius:20px;
+  background:linear-gradient(110deg,#202b3c,#1a1c2b);
+  padding:27px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
 }
 
 .developer-banner p {
-  color: var(--muted);
-  margin-top: 8px;
-  line-height: 1.5;
+  color:var(--muted);
+  margin-top:8px;
+  line-height:1.5;
 }
 
 .primary-btn {
-  border: none;
-  background: var(--accent);
-  color: white;
-  border-radius: 12px;
-  padding: 12px 20px;
-  font-weight: bold;
+  border:none;
+  border-radius:12px;
+  padding:12px 20px;
 }
 
 footer {
-  border-top: 1px solid var(--border);
-  padding: 30px 6%;
-  color: var(--muted);
-  text-align: center;
-  font-size: 13px;
-  line-height: 2;
+  border-top:1px solid var(--border);
+  padding:30px 6%;
+  color:var(--muted);
+  text-align:center;
+  font-size:13px;
+  line-height:2;
 }
 
 footer strong {
-  color: white;
+  color:white;
 }
 
-/* Ficha de aplicación */
-
 .modal {
-  position: fixed;
-  inset: 0;
-  background: #000b;
-  z-index: 30;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 18px;
+  position:fixed;
+  inset:0;
+  background:#000b;
+  z-index:30;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
 }
 
 .modal.show {
-  display: flex;
+  display:flex;
 }
 
 .modal-content {
-  background: #1b202c;
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  padding: 27px;
-  width: 100%;
-  max-width: 460px;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
+  background:#1b202c;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:27px;
+  width:100%;
+  max-width:460px;
+  max-height:90vh;
+  overflow-y:auto;
+  position:relative;
 }
 
 .close {
-  position: absolute;
-  right: 18px;
-  top: 15px;
-  background: var(--surface2);
-  color: white;
-  border: none;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  font-size: 20px;
+  position:absolute;
+  right:18px;
+  top:15px;
+  background:var(--surface2);
+  color:white;
+  border:none;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  font-size:20px;
 }
 
 .modal-icon {
-  font-size: 55px;
-  margin: 15px 0;
+  font-size:55px;
+  margin:15px 0;
 }
 
 .modal-content h2 {
-  margin-bottom: 8px;
+  margin-bottom:8px;
 }
 
 .modal-content p {
-  color: var(--muted);
-  line-height: 1.6;
-  margin: 14px 0;
+  color:var(--muted);
+  line-height:1.6;
+  margin:14px 0;
 }
 
 .modal-details {
-  background: var(--surface2);
-  padding: 15px;
-  border-radius: 13px;
-  line-height: 2;
-  color: #d2d6e1;
-  font-size: 14px;
-  margin: 18px 0;
+  background:var(--surface2);
+  padding:15px;
+  border-radius:13px;
+  line-height:2;
+  color:#d2d6e1;
+  font-size:14px;
+  margin:18px 0;
 }
 
-@media(max-width: 850px) {
+#connection-status {
+  position:fixed;
+  bottom:15px;
+  right:15px;
+  z-index:100;
+  padding:12px 17px;
+  border-radius:12px;
+  background:#222938;
+  color:white;
+  font-size:13px;
+  box-shadow:0 4px 15px #0008;
+  max-width:90%;
+}
+
+@media(max-width:850px) {
   .app-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
 
   .hero-art {
-    font-size: 75px;
-    padding: 0;
+    font-size:75px;
+    padding:0;
   }
 }
 
-@media(max-width: 550px) {
+@media(max-width:550px) {
   header {
-    padding: 0 15px;
+    padding:0 15px;
   }
 
   .logo {
-    font-size: 19px;
+    font-size:19px;
   }
 
   .header-actions button {
-    padding: 9px 12px;
-    font-size: 12px;
+    padding:9px 12px;
+    font-size:12px;
   }
 
   main {
-    padding: 22px 15px 60px;
+    padding:22px 15px 60px;
   }
 
   .hero {
-    padding: 27px 22px;
-    min-height: 230px;
+    padding:27px 22px;
+    min-height:230px;
   }
 
   .hero-art {
-    display: none;
+    display:none;
   }
 
   .developer-banner {
-    align-items: flex-start;
-    flex-direction: column;
+    align-items:flex-start;
+    flex-direction:column;
   }
 }
 </style>
@@ -437,63 +442,65 @@ footer strong {
 
 <main>
 
-  <section class="hero">
-    <div class="hero-content">
-      <div class="eyebrow">MYTHERION STUDIOS PRESENTA</div>
-      <h1>Todo lo que buscas,<br>en un solo lugar.</h1>
-      <p>
-        Descubre aplicaciones y juegos para Android.
-        Explora nuevas experiencias en M-Store.
-      </p>
-    </div>
-    <div class="hero-art">✦</div>
-  </section>
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">MYTHERION STUDIOS PRESENTA</div>
+    <h1>Todo lo que buscas,<br>en un solo lugar.</h1>
+    <p>
+      Descubre aplicaciones y juegos para Android.
+      Explora nuevas experiencias en M-Store.
+    </p>
+  </div>
+  <div class="hero-art">✦</div>
+</section>
 
-  <section class="search-area">
-    <div class="search-box">
-      <span>⌕</span>
-      <input
-        id="search"
-        type="search"
-        placeholder="Buscar aplicaciones y juegos..."
-        oninput="renderApps()"
-      >
-    </div>
-  </section>
+<section class="search-area">
+  <div class="search-box">
+    <span>⌕</span>
+    <input
+      id="search"
+      type="search"
+      placeholder="Buscar aplicaciones y juegos..."
+      oninput="renderApps()"
+    >
+  </div>
+</section>
 
-  <section>
-    <div class="section-heading">
-      <h2>Explorar categorías</h2>
-    </div>
+<section>
+  <div class="section-heading">
+    <h2>Explorar categorías</h2>
+  </div>
 
-    <div class="categories">
-      <button class="category active" onclick="setCategory('Todos',this)">Todos</button>
-      <button class="category" onclick="setCategory('Aplicaciones',this)">Aplicaciones</button>
-      <button class="category" onclick="setCategory('Juegos',this)">Juegos</button>
-      <button class="category" onclick="setCategory('Productividad',this)">Productividad</button>
-      <button class="category" onclick="setCategory('Entretenimiento',this)">Entretenimiento</button>
-      <button class="category" onclick="setCategory('Herramientas',this)">Herramientas</button>
-    </div>
-  </section>
+  <div class="categories">
+    <button class="category active" onclick="setCategory('Todos',this)">Todos</button>
+    <button class="category" onclick="setCategory('Aplicaciones',this)">Aplicaciones</button>
+    <button class="category" onclick="setCategory('Juegos',this)">Juegos</button>
+    <button class="category" onclick="setCategory('Productividad',this)">Productividad</button>
+    <button class="category" onclick="setCategory('Entretenimiento',this)">Entretenimiento</button>
+    <button class="category" onclick="setCategory('Herramientas',this)">Herramientas</button>
+  </div>
+</section>
 
-  <section>
-    <div class="section-heading">
-      <h2>Destacados</h2>
-      <small>Descubre nuevas experiencias</small>
-    </div>
-    <div class="app-grid" id="appGrid"></div>
-  </section>
+<section>
+  <div class="section-heading">
+    <h2>Destacados</h2>
+    <small>Descubre nuevas experiencias</small>
+  </div>
+  <div class="app-grid" id="appGrid"></div>
+</section>
 
-  <section class="developer-banner">
-    <div>
-      <h2>¿Eres desarrollador?</h2>
-      <p>Publica tus aplicaciones y juegos en M-Store.<br>
-      Tus proyectos pueden llegar a nuevos usuarios.</p>
-    </div>
-    <button class="primary-btn" onclick="showNotice()">
-      Conocer más
-    </button>
-  </section>
+<section class="developer-banner">
+  <div>
+    <h2>¿Eres desarrollador?</h2>
+    <p>
+      Publica tus aplicaciones y juegos en M-Store.<br>
+      Tus proyectos pueden llegar a nuevos usuarios.
+    </p>
+  </div>
+  <button class="primary-btn" onclick="showNotice()">
+    Conocer más
+  </button>
+</section>
 
 </main>
 
@@ -516,7 +523,6 @@ footer strong {
       <div>⬇ Descargas: Próximamente</div>
       <div>📦 Tamaño: Por determinar</div>
       <div>🔞 Clasificación: Por determinar</div>
-      <div>MYTHERION STUDIOS / Desarrollador externo</div>
     </div>
 
     <button class="primary-btn" style="width:100%" onclick="showNotice()">
@@ -525,79 +531,106 @@ footer strong {
   </div>
 </div>
 
+<!-- LIBRERÍA SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
+// =====================================
+// CONFIGURACIÓN SUPABASE
+// =====================================
+
+const SUPABASE_URL =
+"https://jleybxvwvoyuqmgrchzk.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_liYYqQ7WmzDkmJ0qRh-0AA_zrNeXCrz";
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+// =====================================
+// CATÁLOGO DE DEMOSTRACIÓN
+// =====================================
+
 const apps = [
   {
-    name: "Mytherion Music",
-    category: "Entretenimiento",
-    type: "Aplicaciones",
-    icon: "🎵",
-    rating: "Nuevo",
-    description: "Una experiencia musical para descubrir y disfrutar."
+    name:"Mytherion Music",
+    category:"Entretenimiento",
+    type:"Aplicaciones",
+    icon:"🎵",
+    rating:"Nuevo",
+    description:"Una experiencia musical para descubrir y disfrutar."
   },
   {
-    name: "M-Tools",
-    category: "Herramientas",
-    type: "Aplicaciones",
-    icon: "🛠️",
-    rating: "Nuevo",
-    description: "Herramientas útiles para tu día a día."
+    name:"M-Tools",
+    category:"Herramientas",
+    type:"Aplicaciones",
+    icon:"🛠️",
+    rating:"Nuevo",
+    description:"Herramientas útiles para tu día a día."
   },
   {
-    name: "Mytherion Notes",
-    category: "Productividad",
-    type: "Aplicaciones",
-    icon: "📝",
-    rating: "Nuevo",
-    description: "Organiza tus ideas y guarda tus notas."
+    name:"Mytherion Notes",
+    category:"Productividad",
+    type:"Aplicaciones",
+    icon:"📝",
+    rating:"Nuevo",
+    description:"Organiza tus ideas y guarda tus notas."
   },
   {
-    name: "Aventura Pixel",
-    category: "Aventura",
-    type: "Juegos",
-    icon: "🎮",
-    rating: "Nuevo",
-    description: "Explora mundos y vive nuevas aventuras."
+    name:"Aventura Pixel",
+    category:"Aventura",
+    type:"Juegos",
+    icon:"🎮",
+    rating:"Nuevo",
+    description:"Explora mundos y vive nuevas aventuras."
   },
   {
-    name: "Mytherion Player",
-    category: "Entretenimiento",
-    type: "Aplicaciones",
-    icon: "▶️",
-    rating: "Nuevo",
-    description: "Un reproductor multimedia para tus archivos."
+    name:"Mytherion Player",
+    category:"Entretenimiento",
+    type:"Aplicaciones",
+    icon:"▶️",
+    rating:"Nuevo",
+    description:"Un reproductor multimedia para tus archivos."
   },
   {
-    name: "Space Battle",
-    category: "Acción",
-    type: "Juegos",
-    icon: "🚀",
-    rating: "Nuevo",
-    description: "Prepárate para una aventura espacial."
+    name:"Space Battle",
+    category:"Acción",
+    type:"Juegos",
+    icon:"🚀",
+    rating:"Nuevo",
+    description:"Prepárate para una aventura espacial."
   },
   {
-    name: "Quick Calculator",
-    category: "Herramientas",
-    type: "Aplicaciones",
-    icon: "🧮",
-    rating: "Nuevo",
-    description: "Una calculadora sencilla y práctica."
+    name:"Quick Calculator",
+    category:"Herramientas",
+    type:"Aplicaciones",
+    icon:"🧮",
+    rating:"Nuevo",
+    description:"Una calculadora sencilla y práctica."
   },
   {
-    name: "City Life",
-    category: "Simulación",
-    type: "Juegos",
-    icon: "🏙️",
-    rating: "Nuevo",
-    description: "Construye tu propia historia en la ciudad."
+    name:"City Life",
+    category:"Simulación",
+    type:"Juegos",
+    icon:"🏙️",
+    rating:"Nuevo",
+    description:"Construye tu propia historia en la ciudad."
   }
 ];
 
 let selectedCategory = "Todos";
 
+// =====================================
+// MOSTRAR APLICACIONES
+// =====================================
+
 function renderApps() {
   const grid = document.getElementById("appGrid");
-  const search = document.getElementById("search").value.toLowerCase();
+  const search = document.getElementById("search")
+    .value.toLowerCase();
 
   const filtered = apps.filter(app => {
     const matchesSearch =
@@ -615,15 +648,17 @@ function renderApps() {
   grid.innerHTML = "";
 
   if (filtered.length === 0) {
-    grid.innerHTML = '<div class="empty">No encontramos resultados.</div>';
+    grid.innerHTML =
+      '<div class="empty">No encontramos resultados.</div>';
     return;
   }
 
   filtered.forEach(app => {
-    const originalIndex = apps.indexOf(app);
-
+    const index = apps.indexOf(app);
     const card = document.createElement("article");
+
     card.className = "app-card";
+
     card.innerHTML = `
       <div class="app-icon">${app.icon}</div>
       <h3>${app.name}</h3>
@@ -634,12 +669,16 @@ function renderApps() {
       </div>
     `;
 
-    card.addEventListener("click", () => openApp(originalIndex));
+    card.addEventListener("click", () => openApp(index));
     grid.appendChild(card);
   });
 }
 
-function setCategory(category, button) {
+// =====================================
+// FILTROS
+// =====================================
+
+function setCategory(category,button) {
   selectedCategory = category;
 
   document.querySelectorAll(".category").forEach(btn => {
@@ -649,6 +688,10 @@ function setCategory(category, button) {
   button.classList.add("active");
   renderApps();
 }
+
+// =====================================
+// FICHA DE APLICACIÓN
+// =====================================
 
 function openApp(index) {
   const app = apps[index];
@@ -673,11 +716,57 @@ function closeOutside(event) {
   }
 }
 
+// =====================================
+// AVISOS
+// =====================================
+
 function showNotice() {
-  alert("Esta función estará disponible en una próxima actualización de M-Store.");
+  alert("Esta función estará disponible próximamente en M-Store.");
 }
 
+// =====================================
+// PRUEBA DE CONEXIÓN CON SUPABASE
+// =====================================
+
+async function testSupabaseConnection() {
+  const status = document.createElement("div");
+
+  status.id = "connection-status";
+  status.textContent = "Conectando con Supabase...";
+  document.body.appendChild(status);
+
+  try {
+    const { data, error } = await supabaseClient
+      .from("categories")
+      .select("id")
+      .limit(1);
+
+    if (error) {
+      console.error("Error Supabase:",error);
+      status.textContent = "⚠ Error de conexión o permisos";
+      status.style.background = "#8b3030";
+      return;
+    }
+
+    console.log("M-Store conectado:",data);
+
+    status.textContent = "✓ M-Store conectado con Supabase";
+    status.style.background = "#216b49";
+
+  } catch (error) {
+    console.error(error);
+    status.textContent = "⚠ No se pudo conectar";
+    status.style.background = "#8b3030";
+  }
+}
+
+// =====================================
+// INICIAR M-STORE
+// =====================================
+
 renderApps();
+testSupabaseConnection();
+
 </script>
 
 </body>
