@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,494 +16,210 @@
   --accent:#8b78ff;
   --border:#2a3242;
 }
-
-* {
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-body {
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial,sans-serif;
-}
-
-button,input,textarea {
-  font:inherit;
-}
-
-button { cursor:pointer; }
-
+* {box-sizing:border-box;margin:0;padding:0}
+body {background:var(--bg);color:var(--text);font-family:Arial,sans-serif}
+button,input,textarea {font:inherit}
+button {cursor:pointer}
 header {
-  min-height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 6%;
-  border-bottom:1px solid var(--border);
-  background:#131722;
-  position:sticky;
-  top:0;
-  z-index:10;
-  gap:12px;
+  min-height:72px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 6%;border-bottom:1px solid var(--border);
+  background:#131722;position:sticky;top:0;z-index:10;gap:12px
 }
-
-.logo {
-  display:flex;
-  align-items:center;
-  gap:11px;
-  font-size:23px;
-  font-weight:bold;
-}
-
+.logo {display:flex;align-items:center;gap:11px;font-size:23px;font-weight:bold}
 .logo-icon {
-  width:40px;
-  height:40px;
-  display:grid;
-  place-items:center;
+  width:40px;height:40px;display:grid;place-items:center;
   background:linear-gradient(135deg,#a99aff,#6550df);
-  border-radius:12px;
-  font-size:25px;
+  border-radius:12px;font-size:25px
 }
-
-.logo span { color:var(--accent); }
-
-.header-actions {
-  display:flex;
-  gap:10px;
-  align-items:center;
-}
-
+.logo span {color:var(--accent)}
+.header-actions {display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .header-actions button {
-  border:1px solid var(--border);
-  background:var(--surface);
-  color:white;
-  border-radius:25px;
-  padding:10px 15px;
+  border:1px solid var(--border);background:var(--surface);color:white;
+  border-radius:25px;padding:10px 15px
 }
-
-.header-actions .login,
-.primary-btn {
-  background:var(--accent);
-  border-color:var(--accent);
-  color:white;
-  font-weight:bold;
+.header-actions .login,.primary-btn {
+  background:var(--accent);border-color:var(--accent);color:white;font-weight:bold
 }
-
-main {
-  max-width:1250px;
-  margin:auto;
-  padding:35px 24px 80px;
-}
-
+main {max-width:1250px;margin:auto;padding:35px 24px 80px}
 .hero {
-  min-height:260px;
-  border-radius:24px;
-  padding:42px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:
-    radial-gradient(circle at 85% 20%,#7761dc66,transparent 35%),
-    linear-gradient(115deg,#292344,#171d2c 70%);
-  border:1px solid #393254;
+  min-height:260px;border-radius:24px;padding:42px;display:flex;
+  align-items:center;justify-content:space-between;
+  background:radial-gradient(circle at 85% 20%,#7761dc66,transparent 35%),
+  linear-gradient(115deg,#292344,#171d2c 70%);
+  border:1px solid #393254
 }
-
-.hero-content { max-width:600px; }
-
-.eyebrow {
-  color:#b9adff;
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:2px;
-  margin-bottom:15px;
-}
-
-.hero h1 {
-  font-size:clamp(30px,5vw,47px);
-  margin-bottom:14px;
-}
-
-.hero p {
-  color:#c2c5d2;
-  line-height:1.6;
-}
-
-.hero-art {
-  font-size:115px;
-  padding:10px 40px;
-}
-
-.search-area { margin:30px 0; }
-
+.hero-content {max-width:600px}
+.eyebrow {color:#b9adff;font-size:12px;font-weight:bold;letter-spacing:2px;margin-bottom:15px}
+.hero h1 {font-size:clamp(30px,5vw,47px);margin-bottom:14px}
+.hero p {color:#c2c5d2;line-height:1.6}
+.hero-art {font-size:115px;padding:10px 40px}
+.search-area {margin:30px 0}
 .search-box {
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:15px 19px;
-  display:flex;
-  align-items:center;
-  gap:12px;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:16px;padding:15px 19px;display:flex;align-items:center;gap:12px
 }
-
-.search-box input {
-  width:100%;
-  background:transparent;
-  border:none;
-  outline:none;
-  color:white;
-  font-size:16px;
-}
-
-.search-box input::placeholder { color:var(--muted); }
-
+.search-box input {width:100%;background:transparent;border:none;outline:none;color:white;font-size:16px}
+.search-box input::placeholder {color:var(--muted)}
 .section-heading {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin:35px 0 18px;
-  gap:12px;
+  display:flex;justify-content:space-between;align-items:center;
+  margin:35px 0 18px;gap:12px
 }
-
-.section-heading h2 { font-size:22px; }
-.section-heading small { color:var(--muted); }
-
-.categories {
-  display:flex;
-  gap:10px;
-  overflow-x:auto;
-  padding-bottom:8px;
-}
-
+.section-heading h2 {font-size:22px}
+.section-heading small {color:var(--muted)}
+.categories {display:flex;gap:10px;overflow-x:auto;padding-bottom:8px}
 .category {
-  flex-shrink:0;
-  border:1px solid var(--border);
-  color:#c7ccda;
-  background:var(--surface);
-  border-radius:25px;
-  padding:10px 17px;
+  flex-shrink:0;border:1px solid var(--border);color:#c7ccda;
+  background:var(--surface);border-radius:25px;padding:10px 17px
 }
-
-.category.active {
-  background:#7561e5;
-  border-color:#7561e5;
-  color:white;
-}
-
-.app-grid {
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:17px;
-}
-
+.category.active {background:#7561e5;border-color:#7561e5;color:white}
+.app-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
 .app-card {
-  background:var(--surface);
-  border:1px solid var(--border);
-  padding:17px;
-  border-radius:17px;
-  cursor:pointer;
-  transition:.2s;
-  min-width:0;
+  background:var(--surface);border:1px solid var(--border);
+  padding:17px;border-radius:17px;cursor:pointer;transition:.2s;min-width:0
 }
-
-.app-card:hover {
-  transform:translateY(-4px);
-  border-color:var(--accent);
-  background:var(--surface2);
-}
-
+.app-card:hover {transform:translateY(-4px);border-color:var(--accent);background:var(--surface2)}
 .app-icon {
-  width:66px;
-  height:66px;
-  border-radius:17px;
-  display:grid;
-  place-items:center;
-  font-size:35px;
-  margin-bottom:15px;
-  background:linear-gradient(135deg,#4e5a83,#292f49);
+  width:66px;height:66px;border-radius:17px;display:grid;place-items:center;
+  font-size:35px;margin-bottom:15px;background:linear-gradient(135deg,#4e5a83,#292f49)
 }
-
-.app-card h3 {
-  font-size:16px;
-  margin-bottom:7px;
-  overflow-wrap:anywhere;
-}
-
-.app-card p {
-  color:var(--muted);
-  font-size:13px;
-  margin-bottom:12px;
-}
-
-.app-meta {
-  display:flex;
-  justify-content:space-between;
-  color:#b5bdcd;
-  font-size:12px;
-}
-
-.empty {
-  color:var(--muted);
-  text-align:center;
-  padding:35px;
-  grid-column:1/-1;
-}
-
+.app-card h3 {font-size:16px;margin-bottom:7px;overflow-wrap:anywhere}
+.app-card p {color:var(--muted);font-size:13px;margin-bottom:12px}
+.app-meta {display:flex;justify-content:space-between;color:#b5bdcd;font-size:12px}
+.empty {color:var(--muted);text-align:center;padding:35px;grid-column:1/-1}
 .developer-banner {
-  margin-top:50px;
-  border:1px solid var(--border);
-  border-radius:20px;
+  margin-top:50px;border:1px solid var(--border);border-radius:20px;
   background:linear-gradient(110deg,#202b3c,#1a1c2b);
-  padding:27px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
+  padding:27px;display:flex;justify-content:space-between;align-items:center;gap:20px
 }
-
-.developer-banner p {
-  color:var(--muted);
-  margin-top:8px;
-  line-height:1.5;
-}
-
-.primary-btn {
-  border:none;
-  border-radius:12px;
-  padding:12px 20px;
-}
-
-.primary-btn:disabled {
-  opacity:.6;
-  cursor:not-allowed;
-}
-
+.developer-banner p {color:var(--muted);margin-top:8px;line-height:1.5}
+.primary-btn {border:none;border-radius:12px;padding:12px 20px}
+.primary-btn:disabled {opacity:.6;cursor:not-allowed}
 footer {
-  border-top:1px solid var(--border);
-  padding:30px 6%;
-  color:var(--muted);
-  text-align:center;
-  font-size:13px;
-  line-height:2;
+  border-top:1px solid var(--border);padding:30px 6%;color:var(--muted);
+  text-align:center;font-size:13px;line-height:2
 }
+footer strong {color:white}
 
-footer strong { color:white; }
-
+/* MODALES */
 .modal {
-  position:fixed;
-  inset:0;
-  background:#000b;
-  z-index:30;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
+  position:fixed;inset:0;background:#000b;z-index:30;display:none;
+  align-items:center;justify-content:center;padding:18px
 }
-
-.modal.show { display:flex; }
-
+.modal.show {display:flex}
 .modal-content {
-  background:#1b202c;
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:27px;
-  width:100%;
-  max-width:460px;
-  max-height:90vh;
-  overflow-y:auto;
-  position:relative;
+  background:#1b202c;border:1px solid var(--border);border-radius:22px;
+  padding:27px;width:100%;max-width:500px;max-height:90vh;
+  overflow-y:auto;position:relative
 }
-
+.modal-content.wide {max-width:850px}
 .close {
-  position:absolute;
-  right:18px;
-  top:15px;
-  background:var(--surface2);
-  color:white;
-  border:none;
-  width:35px;
-  height:35px;
-  border-radius:50%;
-  font-size:20px;
+  position:absolute;right:18px;top:15px;background:var(--surface2);
+  color:white;border:none;width:35px;height:35px;border-radius:50%;font-size:20px
 }
-
-.modal-icon {
-  font-size:55px;
-  margin:15px 0;
-}
-
-.modal-content h2 { margin-bottom:8px; }
-
-.modal-content p {
-  color:var(--muted);
-  line-height:1.6;
-  margin:14px 0;
-}
-
+.modal-icon {font-size:55px;margin:15px 0}
+.modal-content h2 {margin-bottom:8px}
+.modal-content p {color:var(--muted);line-height:1.6;margin:14px 0}
 .modal-details {
-  background:var(--surface2);
-  padding:15px;
-  border-radius:13px;
-  line-height:2;
-  color:#d2d6e1;
-  font-size:14px;
-  margin:18px 0;
+  background:var(--surface2);padding:15px;border-radius:13px;
+  line-height:2;color:#d2d6e1;font-size:14px;margin:18px 0
 }
 
 /* FORMULARIOS */
-
-.auth-content { max-width:440px; }
-
-.auth-content h2 {
-  font-size:25px;
-  margin:15px 0 8px;
+.auth-content {max-width:460px}
+.auth-content h2 {font-size:25px;margin:15px 0 8px}
+.auth-subtitle {color:var(--muted);font-size:14px;line-height:1.5;margin-bottom:22px}
+.auth-form {display:flex;flex-direction:column;gap:13px}
+.auth-form label {display:block;font-size:13px;color:#d7dbea;font-weight:bold}
+.auth-form input,.auth-form textarea {
+  width:100%;margin-top:7px;background:var(--surface2);
+  border:1px solid var(--border);border-radius:11px;padding:14px;
+  color:white;outline:none
 }
-
-.auth-subtitle {
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.5;
-  margin-bottom:22px;
-}
-
-.auth-form {
-  display:flex;
-  flex-direction:column;
-  gap:13px;
-}
-
-.auth-form label {
-  display:block;
-  font-size:13px;
-  color:#d7dbea;
-  font-weight:bold;
-}
-
-.auth-form input,
-.auth-form textarea {
-  width:100%;
-  margin-top:7px;
-  background:var(--surface2);
-  border:1px solid var(--border);
-  border-radius:11px;
-  padding:14px;
-  color:white;
-  outline:none;
-}
-
-.auth-form textarea {
-  min-height:105px;
-  resize:vertical;
-}
-
-.auth-form input:focus,
-.auth-form textarea:focus {
-  border-color:var(--accent);
-}
-
-.auth-form input::placeholder,
-.auth-form textarea::placeholder {
-  color:#788398;
-}
-
-.auth-submit {
-  width:100%;
-  padding:14px;
-  margin-top:7px;
-}
-
-.auth-switch {
-  margin-top:20px;
-  text-align:center;
-  font-size:14px;
-  color:var(--muted);
-}
-
+.auth-form textarea {min-height:105px;resize:vertical}
+.auth-form input:focus,.auth-form textarea:focus {border-color:var(--accent)}
+.auth-form input::placeholder,.auth-form textarea::placeholder {color:#788398}
+.auth-submit {width:100%;padding:14px;margin-top:7px}
+.auth-switch {margin-top:20px;text-align:center;font-size:14px;color:var(--muted)}
 .auth-switch button {
-  border:none;
-  background:none;
-  color:#b9adff;
-  font-weight:bold;
-  padding:5px;
+  border:none;background:none;color:#b9adff;font-weight:bold;padding:5px
 }
-
 .auth-message {
-  display:none;
-  padding:12px;
-  margin-top:15px;
-  border-radius:10px;
-  font-size:13px;
-  line-height:1.5;
-  overflow-wrap:anywhere;
+  display:none;padding:12px;margin-top:15px;border-radius:10px;
+  font-size:13px;line-height:1.5;overflow-wrap:anywhere
 }
+.auth-message.show {display:block}
+.auth-message.success {background:#174b36;color:#b7f5d4}
+.auth-message.error {background:#542b35;color:#ffd0d8}
+.auth-message.info {background:#30314f;color:#dedaff}
 
-.auth-message.show { display:block; }
-
-.auth-message.success {
-  background:#174b36;
-  color:#b7f5d4;
-}
-
-.auth-message.error {
-  background:#542b35;
-  color:#ffd0d8;
-}
-
-.auth-message.info {
-  background:#30314f;
-  color:#dedaff;
-}
-
+/* SOLICITUDES */
 .status-panel {
-  margin-top:20px;
-  background:var(--surface2);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:17px;
+  margin-top:20px;background:var(--surface2);border:1px solid var(--border);
+  border-radius:14px;padding:17px
 }
+.status-label {font-size:12px;color:var(--muted);margin-bottom:9px}
+.status-value {font-size:17px;font-weight:bold}
+.status-pending {color:#ffca70}
+.status-approved {color:#72e0a6}
+.status-rejected {color:#ff8999}
+.status-description {color:#c4cada;font-size:13px;line-height:1.6;margin-top:10px}
 
-.status-label {
-  font-size:12px;
-  color:var(--muted);
-  margin-bottom:9px;
+/* PANEL ADMINISTRATIVO */
+.admin-heading {margin:15px 0 20px}
+.admin-heading p {color:var(--muted);font-size:14px;margin-top:8px}
+.admin-stats {
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0
 }
-
-.status-value {
-  font-size:17px;
-  font-weight:bold;
+.stat-card {
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:14px;padding:17px
 }
-
-.status-pending { color:#ffca70; }
-.status-approved { color:#72e0a6; }
-.status-rejected { color:#ff8999; }
-
-.status-description {
-  color:#c4cada;
-  font-size:13px;
-  line-height:1.6;
-  margin-top:10px;
+.stat-card span {display:block;color:var(--muted);font-size:12px;margin-bottom:10px}
+.stat-card strong {font-size:27px}
+.stat-pending strong {color:#ffca70}
+.stat-approved strong {color:#72e0a6}
+.stat-rejected strong {color:#ff8999}
+.admin-toolbar {display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.admin-toolbar button {
+  background:var(--surface2);border:1px solid var(--border);
+  color:white;border-radius:20px;padding:9px 15px
 }
-
+.admin-toolbar button.active {background:#7561e5;border-color:#7561e5}
+.request-card {
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:15px;padding:17px;margin-bottom:13px
+}
+.request-top {display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.request-card h3 {font-size:17px;overflow-wrap:anywhere}
+.request-email {font-size:12px;color:var(--muted);margin-top:6px;overflow-wrap:anywhere}
+.request-description {font-size:14px;color:#c4cada;line-height:1.6;margin:15px 0}
+.request-status {font-size:12px;font-weight:bold}
+.request-actions {display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+.request-actions button {
+  border:1px solid var(--border);border-radius:10px;padding:10px 15px;
+  color:white;background:var(--surface2)
+}
+.request-actions .approve {background:#176342;border-color:#176342}
+.request-actions .reject {background:#672d3b;border-color:#672d3b}
+.admin-empty {
+  text-align:center;color:var(--muted);padding:35px 15px;
+  background:var(--surface);border:1px solid var(--border);border-radius:14px
+}
 @media(max-width:850px) {
-  .app-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .hero-art { font-size:75px; padding:0; }
+  .app-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-art {font-size:75px;padding:0}
 }
-
 @media(max-width:550px) {
-  header { padding:0 15px; }
-  .logo { font-size:19px; }
-  .header-actions button {
-    padding:9px 12px;
-    font-size:12px;
-  }
-  main { padding:22px 15px 60px; }
-  .hero { padding:27px 22px; min-height:230px; }
-  .hero-art { display:none; }
-  .developer-banner {
-    align-items:flex-start;
-    flex-direction:column;
-  }
+  header {padding:0 15px}
+  .logo {font-size:19px}
+  .header-actions button {padding:9px 12px;font-size:12px}
+  main {padding:22px 15px 60px}
+  .hero {padding:27px 22px;min-height:230px}
+  .hero-art {display:none}
+  .developer-banner {align-items:flex-start;flex-direction:column}
+  .admin-stats {gap:7px}
+  .stat-card {padding:12px}
+  .stat-card strong {font-size:22px}
 }
 </style>
 </head>
@@ -518,6 +233,10 @@ footer strong { color:white; }
   </div>
 
   <div class="header-actions">
+    <button id="adminButton" style="display:none" onclick="openAdminPanel()">
+      Administración
+    </button>
+
     <button id="developerButton" onclick="handleDeveloperButton()">
       Desarrolladores
     </button>
@@ -529,15 +248,11 @@ footer strong { color:white; }
 </header>
 
 <main>
-
 <section class="hero">
   <div class="hero-content">
     <div class="eyebrow">MYTHERION STUDIOS PRESENTA</div>
     <h1>Todo lo que buscas,<br>en un solo lugar.</h1>
-    <p>
-      Descubre aplicaciones y juegos para Android.
-      Explora nuevas experiencias en M-Store.
-    </p>
+    <p>Descubre aplicaciones y juegos para Android. Explora nuevas experiencias en M-Store.</p>
   </div>
   <div class="hero-art">✦</div>
 </section>
@@ -545,20 +260,13 @@ footer strong { color:white; }
 <section class="search-area">
   <div class="search-box">
     <span>⌕</span>
-    <input
-      id="search"
-      type="search"
-      placeholder="Buscar aplicaciones y juegos..."
-      oninput="renderApps()"
-    >
+    <input id="search" type="search"
+      placeholder="Buscar aplicaciones y juegos..." oninput="renderApps()">
   </div>
 </section>
 
 <section>
-  <div class="section-heading">
-    <h2>Explorar categorías</h2>
-  </div>
-
+  <div class="section-heading"><h2>Explorar categorías</h2></div>
   <div class="categories">
     <button class="category active" onclick="setCategory('Todos',this)">Todos</button>
     <button class="category" onclick="setCategory('Aplicaciones',this)">Aplicaciones</button>
@@ -580,16 +288,10 @@ footer strong { color:white; }
 <section class="developer-banner">
   <div>
     <h2>¿Eres desarrollador?</h2>
-    <p>
-      Publica tus aplicaciones y juegos en M-Store.<br>
-      Tus proyectos pueden llegar a nuevos usuarios.
-    </p>
+    <p>Publica tus aplicaciones y juegos en M-Store.<br>Tus proyectos pueden llegar a nuevos usuarios.</p>
   </div>
-  <button class="primary-btn" onclick="handleDeveloperButton()">
-    Conocer más
-  </button>
+  <button class="primary-btn" onclick="handleDeveloperButton()">Conocer más</button>
 </section>
-
 </main>
 
 <footer>
@@ -599,7 +301,6 @@ footer strong { color:white; }
 </footer>
 
 <!-- MODAL DE APLICACIONES -->
-
 <div class="modal" id="appModal" onclick="closeOutside(event)">
   <div class="modal-content">
     <button class="close" onclick="closeModal()">×</button>
@@ -607,163 +308,139 @@ footer strong { color:white; }
     <h2 id="modalTitle"></h2>
     <div id="modalCategory" class="eyebrow"></div>
     <p id="modalDescription"></p>
-
     <div class="modal-details">
       <div>⭐ Valoración: Próximamente</div>
       <div>⬇ Descargas: Próximamente</div>
       <div>📦 Tamaño: Por determinar</div>
       <div>🔞 Clasificación: Por determinar</div>
     </div>
-
-    <button class="primary-btn" style="width:100%" onclick="showNotice()">
-      Descargar próximamente
-    </button>
+    <button class="primary-btn" style="width:100%" onclick="showNotice()">Descargar próximamente</button>
   </div>
 </div>
 
 <!-- MODAL DE AUTENTICACIÓN -->
-
 <div class="modal" id="authModal" onclick="closeAuthOutside(event)">
   <div class="modal-content auth-content">
-
     <button class="close" onclick="closeAuthModal()">×</button>
-
     <div class="logo-icon">M</div>
-
     <h2 id="authTitle">Bienvenido a M-Store</h2>
-
-    <div class="auth-subtitle" id="authSubtitle">
-      Inicia sesión para acceder a tu cuenta.
-    </div>
+    <div class="auth-subtitle" id="authSubtitle">Inicia sesión para acceder a tu cuenta.</div>
 
     <form class="auth-form" id="authForm">
-
       <div id="nameField" style="display:none">
         <label for="displayName">Nombre de usuario</label>
-        <input
-          id="displayName"
-          type="text"
-          placeholder="Tu nombre"
-          maxlength="60"
-          autocomplete="name"
-        >
+        <input id="displayName" type="text" placeholder="Tu nombre"
+          maxlength="60" autocomplete="name">
       </div>
-
       <div>
         <label for="email">Correo electrónico</label>
-        <input
-          id="email"
-          type="email"
-          placeholder="ejemplo@correo.com"
-          autocomplete="email"
-          required
-        >
+        <input id="email" type="email" placeholder="ejemplo@correo.com"
+          autocomplete="email" required>
       </div>
-
       <div>
         <label for="password">Contraseña</label>
-        <input
-          id="password"
-          type="password"
-          placeholder="Tu contraseña"
-          minlength="8"
-          autocomplete="current-password"
-          required
-        >
+        <input id="password" type="password" placeholder="Tu contraseña"
+          minlength="8" autocomplete="current-password" required>
       </div>
-
-      <button class="primary-btn auth-submit" id="authSubmit" type="submit">
-        Iniciar sesión
-      </button>
-
+      <button class="primary-btn auth-submit" id="authSubmit" type="submit">Iniciar sesión</button>
     </form>
 
     <div class="auth-message" id="authMessage"></div>
-
     <div class="auth-switch" id="authSwitch">
       ¿No tienes una cuenta?
-      <button type="button" onclick="switchAuthMode('register')">
-        Crear cuenta
-      </button>
+      <button type="button" onclick="switchAuthMode('register')">Crear cuenta</button>
     </div>
-
   </div>
 </div>
 
 <!-- MODAL DE DESARROLLADORES -->
-
 <div class="modal" id="developerModal" onclick="closeDeveloperOutside(event)">
   <div class="modal-content">
-
     <button class="close" onclick="closeDeveloperModal()">×</button>
-
     <div class="logo-icon">M</div>
-
     <h2 id="developerTitle">Programa de desarrolladores</h2>
-
     <div class="auth-subtitle" id="developerSubtitle">
       Solicita acceso para publicar tus aplicaciones y juegos en M-Store.
     </div>
 
     <form class="auth-form" id="developerForm">
-
       <div>
         <label for="studioName">Nombre del estudio o desarrollador</label>
-        <input
-          id="studioName"
-          type="text"
-          maxlength="100"
-          placeholder="Ej. MYTHERION STUDIOS"
-          required
-        >
+        <input id="studioName" type="text" maxlength="100"
+          placeholder="Ej. MYTHERION STUDIOS" required>
       </div>
-
       <div>
         <label for="studioDescription">Descripción</label>
-        <textarea
-          id="studioDescription"
-          maxlength="1000"
-          placeholder="Cuéntanos qué aplicaciones o juegos desarrollas..."
-          required
-        ></textarea>
+        <textarea id="studioDescription" maxlength="1000"
+          placeholder="Cuéntanos qué aplicaciones o juegos desarrollas..." required></textarea>
       </div>
-
       <div>
         <label for="studioWebsite">Sitio web (opcional)</label>
-        <input
-          id="studioWebsite"
-          type="url"
-          maxlength="255"
-          placeholder="https://tusitio.com"
-        >
+        <input id="studioWebsite" type="url" maxlength="255"
+          placeholder="https://tusitio.com">
       </div>
-
       <button class="primary-btn auth-submit" id="developerSubmit" type="submit">
         Enviar solicitud
       </button>
-
     </form>
 
     <div class="auth-message" id="developerMessage"></div>
-
     <div id="developerStatus" style="display:none"></div>
+  </div>
+</div>
 
+<!-- PANEL ADMINISTRATIVO -->
+<div class="modal" id="adminModal" onclick="closeAdminOutside(event)">
+  <div class="modal-content wide">
+    <button class="close" onclick="closeAdminPanel()">×</button>
+
+    <div class="logo-icon">M</div>
+
+    <div class="admin-heading">
+      <div class="eyebrow">MYTHERION STUDIOS</div>
+      <h2>Panel de administración</h2>
+      <p>Gestiona las solicitudes de desarrolladores de M-Store.</p>
+    </div>
+
+    <div class="admin-stats">
+      <div class="stat-card stat-pending">
+        <span>PENDIENTES</span>
+        <strong id="pendingCount">0</strong>
+      </div>
+      <div class="stat-card stat-approved">
+        <span>APROBADAS</span>
+        <strong id="approvedCount">0</strong>
+      </div>
+      <div class="stat-card stat-rejected">
+        <span>RECHAZADAS</span>
+        <strong id="rejectedCount">0</strong>
+      </div>
+    </div>
+
+    <div class="admin-toolbar">
+      <button class="active" onclick="filterAdminRequests('all',this)">Todas</button>
+      <button onclick="filterAdminRequests('pending',this)">Pendientes</button>
+      <button onclick="filterAdminRequests('approved',this)">Aprobadas</button>
+      <button onclick="filterAdminRequests('rejected',this)">Rechazadas</button>
+      <button onclick="loadAdminRequests()">↻ Actualizar</button>
+    </div>
+
+    <div class="auth-message" id="adminMessage"></div>
+    <div id="adminRequests">
+      <div class="admin-empty">Cargando solicitudes...</div>
+    </div>
   </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-
 // =====================================
 // CONFIGURACIÓN SUPABASE
 // =====================================
 
-const SUPABASE_URL =
-"https://jleybxvwvoyuqmgrchzk.supabase.co";
-
-const SUPABASE_KEY =
-"sb_publishable_liYYqQ7WmzDkmJ0qRh-0AA_zrNeXCrz";
+const SUPABASE_URL = "https://jleybxvwvoyuqmgrchzk.supabase.co";
+const SUPABASE_KEY = "sb_publishable_liYYqQ7WmzDkmJ0qRh-0AA_zrNeXCrz";
 
 const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
@@ -773,90 +450,36 @@ const supabaseClient = window.supabase.createClient(
 const SITE_URL = "https://srambar-cpu.github.io/M-Store/";
 
 let currentUser = null;
+let currentRole = "user";
 let authMode = "login";
 let developerRequestExists = false;
+let adminRequests = [];
+let adminFilter = "all";
 
 // =====================================
 // CATÁLOGO DE DEMOSTRACIÓN
 // =====================================
 
 const apps = [
-  {
-    name:"Mytherion Music",
-    category:"Entretenimiento",
-    type:"Aplicaciones",
-    icon:"🎵",
-    rating:"Nuevo",
-    description:"Una experiencia musical para descubrir y disfrutar."
-  },
-  {
-    name:"M-Tools",
-    category:"Herramientas",
-    type:"Aplicaciones",
-    icon:"🛠️",
-    rating:"Nuevo",
-    description:"Herramientas útiles para tu día a día."
-  },
-  {
-    name:"Mytherion Notes",
-    category:"Productividad",
-    type:"Aplicaciones",
-    icon:"📝",
-    rating:"Nuevo",
-    description:"Organiza tus ideas y guarda tus notas."
-  },
-  {
-    name:"Aventura Pixel",
-    category:"Aventura",
-    type:"Juegos",
-    icon:"🎮",
-    rating:"Nuevo",
-    description:"Explora mundos y vive nuevas aventuras."
-  },
-  {
-    name:"Mytherion Player",
-    category:"Entretenimiento",
-    type:"Aplicaciones",
-    icon:"▶️",
-    rating:"Nuevo",
-    description:"Un reproductor multimedia para tus archivos."
-  },
-  {
-    name:"Space Battle",
-    category:"Acción",
-    type:"Juegos",
-    icon:"🚀",
-    rating:"Nuevo",
-    description:"Prepárate para una aventura espacial."
-  },
-  {
-    name:"Quick Calculator",
-    category:"Herramientas",
-    type:"Aplicaciones",
-    icon:"🧮",
-    rating:"Nuevo",
-    description:"Una calculadora sencilla y práctica."
-  },
-  {
-    name:"City Life",
-    category:"Simulación",
-    type:"Juegos",
-    icon:"🏙️",
-    rating:"Nuevo",
-    description:"Construye tu propia historia en la ciudad."
-  }
+  {name:"Mytherion Music",category:"Entretenimiento",type:"Aplicaciones",icon:"🎵",rating:"Nuevo",description:"Una experiencia musical para descubrir y disfrutar."},
+  {name:"M-Tools",category:"Herramientas",type:"Aplicaciones",icon:"🛠️",rating:"Nuevo",description:"Herramientas útiles para tu día a día."},
+  {name:"Mytherion Notes",category:"Productividad",type:"Aplicaciones",icon:"📝",rating:"Nuevo",description:"Organiza tus ideas y guarda tus notas."},
+  {name:"Aventura Pixel",category:"Aventura",type:"Juegos",icon:"🎮",rating:"Nuevo",description:"Explora mundos y vive nuevas aventuras."},
+  {name:"Mytherion Player",category:"Entretenimiento",type:"Aplicaciones",icon:"▶️",rating:"Nuevo",description:"Un reproductor multimedia para tus archivos."},
+  {name:"Space Battle",category:"Acción",type:"Juegos",icon:"🚀",rating:"Nuevo",description:"Prepárate para una aventura espacial."},
+  {name:"Quick Calculator",category:"Herramientas",type:"Aplicaciones",icon:"🧮",rating:"Nuevo",description:"Una calculadora sencilla y práctica."},
+  {name:"City Life",category:"Simulación",type:"Juegos",icon:"🏙️",rating:"Nuevo",description:"Construye tu propia historia en la ciudad."}
 ];
 
 let selectedCategory = "Todos";
 
 // =====================================
-// MOSTRAR APLICACIONES
+// CATÁLOGO
 // =====================================
 
 function renderApps() {
   const grid = document.getElementById("appGrid");
-  const search = document.getElementById("search")
-    .value.toLowerCase();
+  const search = document.getElementById("search").value.toLowerCase();
 
   const filtered = apps.filter(app => {
     const matchesSearch =
@@ -873,16 +496,14 @@ function renderApps() {
 
   grid.innerHTML = "";
 
-  if (filtered.length === 0) {
-    grid.innerHTML =
-      '<div class="empty">No encontramos resultados.</div>';
+  if (!filtered.length) {
+    grid.innerHTML = '<div class="empty">No encontramos resultados.</div>';
     return;
   }
 
   filtered.forEach(app => {
     const index = apps.indexOf(app);
     const card = document.createElement("article");
-
     card.className = "app-card";
 
     card.innerHTML = `
@@ -900,35 +521,19 @@ function renderApps() {
   });
 }
 
-// =====================================
-// FILTROS
-// =====================================
-
 function setCategory(category,button) {
   selectedCategory = category;
-
-  document.querySelectorAll(".category").forEach(btn => {
-    btn.classList.remove("active");
-  });
-
+  document.querySelectorAll(".category").forEach(btn => btn.classList.remove("active"));
   button.classList.add("active");
   renderApps();
 }
 
-// =====================================
-// FICHA DE APLICACIÓN
-// =====================================
-
 function openApp(index) {
   const app = apps[index];
-
   document.getElementById("modalIcon").textContent = app.icon;
   document.getElementById("modalTitle").textContent = app.name;
-  document.getElementById("modalCategory").textContent =
-    app.type + " · " + app.category;
-  document.getElementById("modalDescription").textContent =
-    app.description;
-
+  document.getElementById("modalCategory").textContent = app.type + " · " + app.category;
+  document.getElementById("modalDescription").textContent = app.description;
   document.getElementById("appModal").classList.add("show");
 }
 
@@ -937,13 +542,11 @@ function closeModal() {
 }
 
 function closeOutside(event) {
-  if (event.target.id === "appModal") {
-    closeModal();
-  }
+  if (event.target.id === "appModal") closeModal();
 }
 
 // =====================================
-// SISTEMA DE AUTENTICACIÓN
+// AUTENTICACIÓN
 // =====================================
 
 function showAuthModal(mode = "login") {
@@ -957,9 +560,7 @@ function closeAuthModal() {
 }
 
 function closeAuthOutside(event) {
-  if (event.target.id === "authModal") {
-    closeAuthModal();
-  }
+  if (event.target.id === "authModal") closeAuthModal();
 }
 
 function switchAuthMode(mode) {
@@ -977,32 +578,19 @@ function switchAuthMode(mode) {
   if (mode === "register") {
     nameField.style.display = "block";
     title.textContent = "Crear cuenta";
-    subtitle.textContent =
-      "Regístrate para formar parte de la comunidad M-Store.";
+    subtitle.textContent = "Regístrate para formar parte de la comunidad M-Store.";
     submit.textContent = "Crear mi cuenta";
     password.autocomplete = "new-password";
-
-    switchArea.innerHTML = `
-      ¿Ya tienes una cuenta?
-      <button type="button" onclick="switchAuthMode('login')">
-        Iniciar sesión
-      </button>
-    `;
-
+    switchArea.innerHTML = `¿Ya tienes una cuenta?
+      <button type="button" onclick="switchAuthMode('login')">Iniciar sesión</button>`;
   } else {
     nameField.style.display = "none";
     title.textContent = "Bienvenido a M-Store";
-    subtitle.textContent =
-      "Inicia sesión para acceder a tu cuenta.";
+    subtitle.textContent = "Inicia sesión para acceder a tu cuenta.";
     submit.textContent = "Iniciar sesión";
     password.autocomplete = "current-password";
-
-    switchArea.innerHTML = `
-      ¿No tienes una cuenta?
-      <button type="button" onclick="switchAuthMode('register')">
-        Crear cuenta
-      </button>
-    `;
+    switchArea.innerHTML = `¿No tienes una cuenta?
+      <button type="button" onclick="switchAuthMode('register')">Crear cuenta</button>`;
   }
 }
 
@@ -1018,199 +606,145 @@ function clearAuthMessage() {
   element.className = "auth-message";
 }
 
-// =====================================
-// REGISTRO E INICIO DE SESIÓN
-// =====================================
+document.getElementById("authForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
 
-document.getElementById("authForm").addEventListener(
-  "submit",
-  async function(event) {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  const displayName = document.getElementById("displayName").value.trim();
+  const submit = document.getElementById("authSubmit");
 
-    event.preventDefault();
-
-    const email = document.getElementById("email")
-      .value.trim();
-
-    const password = document.getElementById("password")
-      .value;
-
-    const displayName = document.getElementById("displayName")
-      .value.trim();
-
-    const submit = document.getElementById("authSubmit");
-
-    if (password.length < 8) {
-      showAuthMessage(
-        "La contraseña debe tener al menos 8 caracteres.",
-        "error"
-      );
-      return;
-    }
-
-    if (authMode === "register" && !displayName) {
-      showAuthMessage(
-        "Escribe el nombre que aparecerá en tu perfil.",
-        "error"
-      );
-      return;
-    }
-
-    submit.disabled = true;
-    submit.textContent = "Procesando...";
-
-    try {
-
-      if (authMode === "register") {
-
-        const { data, error } = await supabaseClient.auth.signUp({
-          email: email,
-          password: password,
-          options: {
-            data: {
-              display_name: displayName
-            },
-            emailRedirectTo: SITE_URL
-          }
-        });
-
-        if (error) throw error;
-
-        if (data.session) {
-          showAuthMessage(
-            "¡Tu cuenta se creó correctamente! Ya puedes utilizar M-Store.",
-            "success"
-          );
-        } else {
-          showAuthMessage(
-            "¡Registro realizado! Revisa tu correo electrónico y confirma tu cuenta antes de iniciar sesión.",
-            "success"
-          );
-        }
-
-        document.getElementById("authForm").reset();
-
-      } else {
-
-        const { data, error } =
-          await supabaseClient.auth.signInWithPassword({
-            email: email,
-            password: password
-          });
-
-        if (error) throw error;
-
-        currentUser = data.user;
-        updateAuthUI(currentUser);
-
-        showAuthMessage(
-          "¡Bienvenido! Has iniciado sesión correctamente.",
-          "success"
-        );
-
-        setTimeout(() => {
-          closeAuthModal();
-        }, 900);
-
-      }
-
-    } catch (error) {
-
-      console.error("Error de autenticación:",error);
-
-      let message = error.message ||
-        "No se pudo completar la operación.";
-
-      if (message.toLowerCase().includes("invalid login")) {
-        message = "Correo o contraseña incorrectos.";
-      }
-
-      if (message.toLowerCase().includes("already registered")) {
-        message = "Este correo ya tiene una cuenta registrada.";
-      }
-
-      if (message.toLowerCase().includes("password")) {
-        message = "La contraseña no cumple los requisitos.";
-      }
-
-      showAuthMessage(message,"error");
-
-    } finally {
-
-      submit.disabled = false;
-
-      submit.textContent =
-        authMode === "register"
-          ? "Crear mi cuenta"
-          : "Iniciar sesión";
-
-    }
-
+  if (password.length < 8) {
+    showAuthMessage("La contraseña debe tener al menos 8 caracteres.","error");
+    return;
   }
-);
+
+  if (authMode === "register" && !displayName) {
+    showAuthMessage("Escribe el nombre que aparecerá en tu perfil.","error");
+    return;
+  }
+
+  submit.disabled = true;
+  submit.textContent = "Procesando...";
+
+  try {
+    if (authMode === "register") {
+      const {data,error} = await supabaseClient.auth.signUp({
+        email,
+        password,
+        options: {
+          data: {display_name:displayName},
+          emailRedirectTo:SITE_URL
+        }
+      });
+
+      if (error) throw error;
+
+      showAuthMessage(
+        data.session
+          ? "¡Tu cuenta se creó correctamente!"
+          : "¡Registro realizado! Revisa tu correo y confirma tu cuenta antes de iniciar sesión.",
+        "success"
+      );
+
+      document.getElementById("authForm").reset();
+
+    } else {
+      const {data,error} = await supabaseClient.auth.signInWithPassword({email,password});
+      if (error) throw error;
+
+      await updateAuthUI(data.user);
+
+      showAuthMessage("¡Bienvenido! Has iniciado sesión correctamente.","success");
+
+      setTimeout(closeAuthModal,900);
+    }
+
+  } catch (error) {
+    console.error("Error de autenticación:",error);
+    let message = error.message || "No se pudo completar la operación.";
+
+    if (message.toLowerCase().includes("invalid login")) {
+      message = "Correo o contraseña incorrectos.";
+    }
+    if (message.toLowerCase().includes("already registered")) {
+      message = "Este correo ya tiene una cuenta registrada.";
+    }
+    showAuthMessage(message,"error");
+
+  } finally {
+    submit.disabled = false;
+    submit.textContent = authMode === "register" ? "Crear mi cuenta" : "Iniciar sesión";
+  }
+});
 
 // =====================================
-// ACTUALIZAR INTERFAZ DE CUENTA
+// PERFIL Y ROL DE LA CUENTA
 // =====================================
 
-function updateAuthUI(user) {
-
+async function updateAuthUI(user) {
   currentUser = user || null;
+  currentRole = "user";
 
-  const accountButton =
-    document.getElementById("accountButton");
+  const accountButton = document.getElementById("accountButton");
+  const adminButton = document.getElementById("adminButton");
 
-  if (currentUser) {
-
-    accountButton.textContent = "Cerrar sesión";
-
-    const displayName =
-      currentUser.user_metadata?.display_name ||
-      currentUser.email;
-
-    accountButton.title = displayName;
-
-  } else {
-
+  if (!currentUser) {
     accountButton.textContent = "Iniciar sesión";
     accountButton.title = "Acceder a M-Store";
-
+    adminButton.style.display = "none";
+    return;
   }
 
+  accountButton.textContent = "Cerrar sesión";
+  accountButton.title = currentUser.user_metadata?.display_name || currentUser.email;
+
+  adminButton.style.display = "none";
+
+  try {
+    const {data,error} = await supabaseClient
+      .from("profiles")
+      .select("role")
+      .eq("id",currentUser.id)
+      .maybeSingle();
+
+    if (error) throw error;
+
+    if (data && data.role === "admin") {
+      currentRole = "admin";
+      adminButton.style.display = "inline-block";
+    }
+
+  } catch (error) {
+    console.error("No se pudo consultar el rol:",error);
+  }
 }
 
 // =====================================
-// BOTÓN DE CUENTA
+// CERRAR SESIÓN
 // =====================================
 
 async function handleAccountButton() {
-
   if (!currentUser) {
     showAuthModal("login");
     return;
   }
 
-  const confirmLogout = confirm(
-    "¿Quieres cerrar tu sesión de M-Store?"
-  );
+  if (!confirm("¿Quieres cerrar tu sesión de M-Store?")) return;
 
-  if (!confirmLogout) return;
-
-  const { error } = await supabaseClient.auth.signOut();
+  const {error} = await supabaseClient.auth.signOut();
 
   if (error) {
     alert("No se pudo cerrar la sesión: " + error.message);
     return;
   }
 
-  currentUser = null;
-  updateAuthUI(null);
-
+  await updateAuthUI(null);
   alert("Has cerrado tu sesión correctamente.");
-
 }
 
 // =====================================
-// SISTEMA DE SOLICITUDES DE DESARROLLADOR
+// SOLICITUDES DE DESARROLLADOR
 // =====================================
 
 function showDeveloperMessage(message,type) {
@@ -1231,168 +765,114 @@ function closeDeveloperModal() {
 }
 
 function closeDeveloperOutside(event) {
-  if (event.target.id === "developerModal") {
-    closeDeveloperModal();
-  }
+  if (event.target.id === "developerModal") closeDeveloperModal();
 }
 
 function resetDeveloperModal() {
   document.getElementById("developerForm").style.display = "flex";
   document.getElementById("developerStatus").style.display = "none";
-  document.getElementById("developerTitle").textContent =
-    "Programa de desarrolladores";
-  document.getElementById("developerSubtitle").textContent =
-    "Solicita acceso para publicar tus aplicaciones y juegos en M-Store.";
   document.getElementById("developerSubmit").disabled = false;
-  document.getElementById("developerSubmit").textContent =
-    "Enviar solicitud";
+  document.getElementById("developerSubmit").textContent = "Enviar solicitud";
   clearDeveloperMessage();
 }
 
 async function handleDeveloperButton() {
-
   if (!currentUser) {
     showAuthModal("login");
-    showAuthMessage(
-      "Inicia sesión para solicitar acceso al programa de desarrolladores.",
-      "info"
-    );
+    showAuthMessage("Inicia sesión para solicitar acceso al programa de desarrolladores.","info");
     return;
   }
 
-  const modal = document.getElementById("developerModal");
-
-  modal.classList.add("show");
+  document.getElementById("developerModal").classList.add("show");
   resetDeveloperModal();
 
   const title = document.getElementById("developerTitle");
   const subtitle = document.getElementById("developerSubtitle");
   const form = document.getElementById("developerForm");
-  const statusPanel = document.getElementById("developerStatus");
 
   title.textContent = "Comprobando solicitud...";
   subtitle.textContent = "Estamos consultando tu información.";
   form.style.display = "none";
 
   try {
-
-    const { data, error } = await supabaseClient
+    const {data,error} = await supabaseClient
       .from("developer_profiles")
-      .select("user_id, studio_name, description, website, status, created_at")
-      .eq("user_id", currentUser.id)
+      .select("user_id,studio_name,description,website,status,created_at")
+      .eq("user_id",currentUser.id)
       .maybeSingle();
 
     if (error) throw error;
 
     if (data) {
-
       developerRequestExists = true;
-
-      title.textContent = "Tu solicitud de desarrollador";
-      subtitle.textContent =
-        "Aquí puedes consultar el estado de tu solicitud.";
-
       showDeveloperStatus(data);
-
     } else {
-
       developerRequestExists = false;
-
       title.textContent = "Solicita ser desarrollador";
-      subtitle.textContent =
-        "Completa los datos de tu estudio o proyecto para solicitar acceso.";
-
+      subtitle.textContent = "Completa los datos de tu estudio o proyecto para solicitar acceso.";
       form.reset();
       form.style.display = "flex";
-
     }
 
   } catch (error) {
-
     console.error("Error consultando solicitud:",error);
-
     title.textContent = "No pudimos consultar tu solicitud";
-    subtitle.textContent =
-      "Ocurrió un problema al consultar tus datos.";
-
-    showDeveloperMessage(
-      "Error: " + error.message,
-      "error"
-    );
-
+    showDeveloperMessage("Error: " + error.message,"error");
   }
-
 }
 
-// =====================================
-// MOSTRAR ESTADO DE LA SOLICITUD
-// =====================================
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g,character => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  })[character]);
+}
 
 function showDeveloperStatus(request) {
+  document.getElementById("developerForm").style.display = "none";
 
-  const form = document.getElementById("developerForm");
   const panel = document.getElementById("developerStatus");
-  const title = document.getElementById("developerTitle");
-  const subtitle = document.getElementById("developerSubtitle");
-
-  form.style.display = "none";
   panel.style.display = "block";
 
   const statuses = {
     pending: {
       label:"Pendiente de revisión",
       className:"status-pending",
-      description:
-        "Tu solicitud fue recibida. MYTHERION STUDIOS debe revisarla antes de que puedas publicar aplicaciones."
+      description:"Tu solicitud fue recibida. MYTHERION STUDIOS debe revisarla antes de que puedas publicar aplicaciones."
     },
     approved: {
       label:"Solicitud aprobada",
       className:"status-approved",
-      description:
-        "¡Felicidades! Tu cuenta de desarrollador ha sido aprobada. Ya puedes continuar con el proceso de publicación."
+      description:"¡Felicidades! Tu cuenta de desarrollador ha sido aprobada."
     },
     rejected: {
       label:"Solicitud rechazada",
       className:"status-rejected",
-      description:
-        "Tu solicitud no fue aprobada. Por el momento no tienes permisos para publicar aplicaciones."
+      description:"Tu solicitud no fue aprobada. Por el momento no tienes permisos para publicar aplicaciones."
     }
   };
 
   const status = statuses[request.status] || {
-    label:"Estado desconocido",
-    className:"",
+    label:"Estado desconocido",className:"",
     description:"No pudimos identificar el estado de tu solicitud."
   };
 
-  title.textContent = request.studio_name || "Solicitud de desarrollador";
-  subtitle.textContent = "Información de tu solicitud";
+  document.getElementById("developerTitle").textContent =
+    request.studio_name || "Solicitud de desarrollador";
+  document.getElementById("developerSubtitle").textContent =
+    "Información de tu solicitud";
 
   panel.innerHTML = `
     <div class="status-panel">
       <div class="status-label">ESTADO DE LA SOLICITUD</div>
-      <div class="status-value ${status.className}">
-        ${status.label}
-      </div>
-      <div class="status-description">
-        ${status.description}
-      </div>
+      <div class="status-value ${status.className}">${status.label}</div>
+      <div class="status-description">${status.description}</div>
     </div>
-
     <div class="status-panel">
       <div class="status-label">ESTUDIO O DESARROLLADOR</div>
-      <div>${escapeHTML(request.studio_name || "Sin nombre")}</div>
-
-      <div class="status-label" style="margin-top:15px">
-        DESCRIPCIÓN
-      </div>
-      <div class="status-description">
-        ${escapeHTML(request.description || "Sin descripción")}
-      </div>
-
-      <div class="status-label" style="margin-top:15px">
-        SITIO WEB
-      </div>
+      <div>${escapeHTML(request.studio_name)}</div>
+      <div class="status-label" style="margin-top:15px">DESCRIPCIÓN</div>
+      <div class="status-description">${escapeHTML(request.description)}</div>
+      <div class="status-label" style="margin-top:15px">SITIO WEB</div>
       <div class="status-description">
         ${request.website
           ? `<a href="${escapeHTML(request.website)}" target="_blank" rel="noopener noreferrer" style="color:#b9adff">${escapeHTML(request.website)}</a>`
@@ -1400,188 +880,311 @@ function showDeveloperStatus(request) {
       </div>
     </div>
   `;
-
 }
 
+document.getElementById("developerForm").addEventListener("submit",async function(event) {
+  event.preventDefault();
+
+  if (!currentUser) {
+    showDeveloperMessage("Tu sesión no está activa. Inicia sesión nuevamente.","error");
+    return;
+  }
+
+  if (developerRequestExists) {
+    showDeveloperMessage("Ya existe una solicitud asociada a tu cuenta.","info");
+    return;
+  }
+
+  const studioName = document.getElementById("studioName").value.trim();
+  const description = document.getElementById("studioDescription").value.trim();
+  const website = document.getElementById("studioWebsite").value.trim();
+
+  if (!studioName || !description) {
+    showDeveloperMessage("Completa el nombre y la descripción.","error");
+    return;
+  }
+
+  if (website) {
+    try {
+      const parsedURL = new URL(website);
+      if (!["http:","https:"].includes(parsedURL.protocol)) throw new Error();
+    } catch {
+      showDeveloperMessage("Escribe una dirección web válida, comenzando con https://","error");
+      return;
+    }
+  }
+
+  const submit = document.getElementById("developerSubmit");
+  submit.disabled = true;
+  submit.textContent = "Enviando solicitud...";
+
+  try {
+    const {data,error} = await supabaseClient
+      .from("developer_profiles")
+      .insert({
+        user_id:currentUser.id,
+        studio_name:studioName,
+        description,
+        website:website || null,
+        status:"pending"
+      })
+      .select("user_id,studio_name,description,website,status,created_at")
+      .single();
+
+    if (error) throw error;
+
+    developerRequestExists = true;
+    showDeveloperStatus(data);
+
+  } catch (error) {
+    console.error("Error enviando solicitud:",error);
+    showDeveloperMessage("No se pudo enviar la solicitud: " + error.message,"error");
+  } finally {
+    submit.disabled = false;
+    submit.textContent = "Enviar solicitud";
+  }
+});
+
 // =====================================
-// PROTEGER TEXTO MOSTRADO EN HTML
+// PANEL DE ADMINISTRACIÓN
 // =====================================
 
-function escapeHTML(value) {
-  return String(value).replace(/[&<>"']/g, function(character) {
-    return {
-      "&":"&amp;",
-      "<":"&lt;",
-      ">":"&gt;",
-      '"':"&quot;",
-      "'":"&#039;"
-    }[character];
+function showAdminMessage(message,type) {
+  const element = document.getElementById("adminMessage");
+  element.textContent = message;
+  element.className = "auth-message show " + type;
+}
+
+function clearAdminMessage() {
+  const element = document.getElementById("adminMessage");
+  element.textContent = "";
+  element.className = "auth-message";
+}
+
+function closeAdminPanel() {
+  document.getElementById("adminModal").classList.remove("show");
+  clearAdminMessage();
+}
+
+function closeAdminOutside(event) {
+  if (event.target.id === "adminModal") closeAdminPanel();
+}
+
+async function openAdminPanel() {
+  if (!currentUser || currentRole !== "admin") {
+    alert("No tienes autorización para acceder al panel administrativo.");
+    return;
+  }
+
+  document.getElementById("adminModal").classList.add("show");
+  await loadAdminRequests();
+}
+
+async function loadAdminRequests() {
+  const container = document.getElementById("adminRequests");
+  container.innerHTML = '<div class="admin-empty">Cargando solicitudes...</div>';
+  clearAdminMessage();
+
+  if (!currentUser || currentRole !== "admin") {
+    container.innerHTML = '<div class="admin-empty">Acceso no autorizado.</div>';
+    return;
+  }
+
+  try {
+    const {data,error} = await supabaseClient
+      .from("developer_profiles")
+      .select("user_id,studio_name,description,website,status,created_at")
+      .order("created_at",{ascending:false});
+
+    if (error) throw error;
+
+    adminRequests = data || [];
+
+    document.getElementById("pendingCount").textContent =
+      adminRequests.filter(item => item.status === "pending").length;
+
+    document.getElementById("approvedCount").textContent =
+      adminRequests.filter(item => item.status === "approved").length;
+
+    document.getElementById("rejectedCount").textContent =
+      adminRequests.filter(item => item.status === "rejected").length;
+
+    renderAdminRequests();
+
+  } catch (error) {
+    console.error("Error cargando solicitudes:",error);
+    container.innerHTML = '<div class="admin-empty">No se pudieron cargar las solicitudes.</div>';
+    showAdminMessage("Error al consultar Supabase: " + error.message,"error");
+  }
+}
+
+function filterAdminRequests(filter,button) {
+  adminFilter = filter;
+
+  document.querySelectorAll(".admin-toolbar button").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  button.classList.add("active");
+  renderAdminRequests();
+}
+
+function renderAdminRequests() {
+  const container = document.getElementById("adminRequests");
+  container.innerHTML = "";
+
+  const filtered = adminRequests.filter(item =>
+    adminFilter === "all" || item.status === adminFilter
+  );
+
+  if (!filtered.length) {
+    container.innerHTML = '<div class="admin-empty">No hay solicitudes en esta categoría.</div>';
+    return;
+  }
+
+  filtered.forEach(request => {
+    const card = document.createElement("div");
+    card.className = "request-card";
+
+    const statusInfo = {
+      pending:{label:"Pendiente de revisión",className:"status-pending"},
+      approved:{label:"Aprobada",className:"status-approved"},
+      rejected:{label:"Rechazada",className:"status-rejected"}
+    };
+
+    const status = statusInfo[request.status] || {
+      label:"Desconocido",className:""
+    };
+
+    const date = request.created_at
+      ? new Date(request.created_at).toLocaleString("es-CO")
+      : "Fecha no disponible";
+
+    card.innerHTML = `
+      <div class="request-top">
+        <div>
+          <h3>${escapeHTML(request.studio_name)}</h3>
+          <div class="request-email">ID de cuenta: ${escapeHTML(request.user_id)}</div>
+        </div>
+        <div class="request-status ${status.className}">${status.label}</div>
+      </div>
+      <div class="request-description">${escapeHTML(request.description)}</div>
+      <div class="request-email">Sitio web: ${
+        request.website
+          ? `<a href="${escapeHTML(request.website)}" target="_blank" rel="noopener noreferrer" style="color:#b9adff">${escapeHTML(request.website)}</a>`
+          : "No proporcionado"
+      }</div>
+      <div class="request-email">Fecha: ${escapeHTML(date)}</div>
+      <div class="request-actions"></div>
+    `;
+
+    const actions = card.querySelector(".request-actions");
+
+    if (request.status === "pending") {
+      const approveButton = document.createElement("button");
+      approveButton.className = "approve";
+      approveButton.textContent = "Aprobar";
+      approveButton.addEventListener("click",() =>
+        changeDeveloperStatus(request.user_id,"approved")
+      );
+
+      const rejectButton = document.createElement("button");
+      rejectButton.className = "reject";
+      rejectButton.textContent = "Rechazar";
+      rejectButton.addEventListener("click",() =>
+        changeDeveloperStatus(request.user_id,"rejected")
+      );
+
+      actions.append(approveButton,rejectButton);
+    } else {
+      const reviewed = document.createElement("span");
+      reviewed.className = "request-email";
+      reviewed.textContent = "Esta solicitud ya fue revisada.";
+      actions.appendChild(reviewed);
+    }
+
+    container.appendChild(card);
   });
 }
 
 // =====================================
-// ENVIAR SOLICITUD A SUPABASE
+// APROBAR O RECHAZAR
 // =====================================
 
-document.getElementById("developerForm").addEventListener(
-  "submit",
-  async function(event) {
-
-    event.preventDefault();
-
-    if (!currentUser) {
-      showDeveloperMessage(
-        "Tu sesión no está activa. Inicia sesión nuevamente.",
-        "error"
-      );
-      return;
-    }
-
-    if (developerRequestExists) {
-      showDeveloperMessage(
-        "Ya existe una solicitud asociada a tu cuenta.",
-        "info"
-      );
-      return;
-    }
-
-    const studioName = document.getElementById("studioName")
-      .value.trim();
-
-    const description = document.getElementById("studioDescription")
-      .value.trim();
-
-    const website = document.getElementById("studioWebsite")
-      .value.trim();
-
-    if (!studioName || !description) {
-      showDeveloperMessage(
-        "Completa el nombre y la descripción.",
-        "error"
-      );
-      return;
-    }
-
-    if (website) {
-      try {
-        const parsedURL = new URL(website);
-
-        if (!["http:","https:"].includes(parsedURL.protocol)) {
-          throw new Error("URL no válida");
-        }
-
-      } catch {
-        showDeveloperMessage(
-          "Escribe una dirección web válida, comenzando con https://",
-          "error"
-        );
-        return;
-      }
-    }
-
-    const submit = document.getElementById("developerSubmit");
-
-    submit.disabled = true;
-    submit.textContent = "Enviando solicitud...";
-
-    clearDeveloperMessage();
-
-    try {
-
-      const { data, error } = await supabaseClient
-        .from("developer_profiles")
-        .insert({
-          user_id: currentUser.id,
-          studio_name: studioName,
-          description: description,
-          website: website || null,
-          status: "pending"
-        })
-        .select("user_id, studio_name, description, website, status, created_at")
-        .single();
-
-      if (error) throw error;
-
-      developerRequestExists = true;
-
-      showDeveloperStatus(data);
-
-    } catch (error) {
-
-      console.error("Error enviando solicitud:",error);
-
-      let message = error.message ||
-        "No se pudo enviar la solicitud.";
-
-      if (error.code === "23505") {
-        message =
-          "Ya existe una solicitud para esta cuenta. Cierra y vuelve a abrir esta sección.";
-      }
-
-      if (error.code === "42501") {
-        message =
-          "Supabase no autorizó la operación. Comprueba tu sesión y las políticas de seguridad.";
-      }
-
-      showDeveloperMessage(message,"error");
-
-    } finally {
-
-      submit.disabled = false;
-      submit.textContent = "Enviar solicitud";
-
-    }
-
+async function changeDeveloperStatus(userId,newStatus) {
+  if (!currentUser || currentRole !== "admin") {
+    showAdminMessage("No tienes autorización para realizar esta acción.","error");
+    return;
   }
-);
+
+  const action = newStatus === "approved" ? "aprobar" : "rechazar";
+
+  if (!confirm("¿Confirmas que deseas " + action + " esta solicitud?")) {
+    return;
+  }
+
+  try {
+    const {data,error} = await supabaseClient
+      .from("developer_profiles")
+      .update({status:newStatus})
+      .eq("user_id",userId)
+      .select("user_id,status")
+      .single();
+
+    if (error) throw error;
+
+    if (!data) {
+      throw new Error("No se pudo confirmar el cambio de estado.");
+    }
+
+    showAdminMessage(
+      newStatus === "approved"
+        ? "La solicitud fue aprobada correctamente."
+        : "La solicitud fue rechazada correctamente.",
+      "success"
+    );
+
+    await loadAdminRequests();
+
+  } catch (error) {
+    console.error("Error actualizando solicitud:",error);
+    showAdminMessage("No se pudo actualizar la solicitud: " + error.message,"error");
+  }
+}
 
 // =====================================
-// RECUPERAR SESIÓN Y ESCUCHAR CAMBIOS
+// INICIALIZAR SESIÓN
 // =====================================
 
 async function initializeAuth() {
+  const {data,error} = await supabaseClient.auth.getSession();
 
-  const {
-    data: { session },
-    error
-  } = await supabaseClient.auth.getSession();
+  if (error) console.error("Error recuperando sesión:",error);
 
-  if (error) {
-    console.error("Error recuperando sesión:",error);
-  }
+  await updateAuthUI(data?.session?.user || null);
 
-  updateAuthUI(session?.user || null);
+  supabaseClient.auth.onAuthStateChange((event,session) => {
+    const user = session?.user || null;
 
-  supabaseClient.auth.onAuthStateChange(
-    (event,session) => {
-
-      updateAuthUI(session?.user || null);
-
-      console.log("Estado de autenticación:",event);
-
-    }
-  );
-
+    // Se difiere la consulta del perfil para evitar llamadas
+    // anidadas durante el evento de autenticación.
+    setTimeout(() => {
+      updateAuthUI(user);
+    },0);
+  });
 }
 
 // =====================================
-// AVISOS
+// AVISOS E INICIO
 // =====================================
 
 function showNotice() {
-  alert(
-    "Esta función estará disponible próximamente en M-Store."
-  );
+  alert("Esta función estará disponible próximamente en M-Store.");
 }
-
-// =====================================
-// INICIAR M-STORE
-// =====================================
 
 renderApps();
 initializeAuth();
 
 </script>
-
 </body>
 </html>
