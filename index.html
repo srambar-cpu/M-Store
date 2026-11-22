@@ -39,7 +39,7 @@ button {
 }
 
 header {
-  height:72px;
+  min-height:72px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -49,6 +49,7 @@ header {
   position:sticky;
   top:0;
   z-index:10;
+  gap:12px;
 }
 
 .logo {
@@ -76,6 +77,7 @@ header {
 .header-actions {
   display:flex;
   gap:10px;
+  align-items:center;
 }
 
 .header-actions button {
@@ -366,18 +368,113 @@ footer strong {
   margin:18px 0;
 }
 
-#connection-status {
-  position:fixed;
-  bottom:15px;
-  right:15px;
-  z-index:100;
-  padding:12px 17px;
-  border-radius:12px;
-  background:#222938;
-  color:white;
+/* FORMULARIO DE CUENTAS */
+
+.auth-content {
+  max-width:440px;
+}
+
+.auth-content h2 {
+  font-size:25px;
+  margin:15px 0 8px;
+}
+
+.auth-subtitle {
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5;
+  margin-bottom:22px;
+}
+
+.auth-form {
+  display:flex;
+  flex-direction:column;
+  gap:13px;
+}
+
+.auth-form label {
   font-size:13px;
-  box-shadow:0 4px 15px #0008;
-  max-width:90%;
+  color:#d7dbea;
+  font-weight:bold;
+}
+
+.auth-form input {
+  width:100%;
+  margin-top:7px;
+  background:var(--surface2);
+  border:1px solid var(--border);
+  border-radius:11px;
+  padding:14px;
+  color:white;
+  outline:none;
+}
+
+.auth-form input:focus {
+  border-color:var(--accent);
+}
+
+.auth-form input::placeholder {
+  color:#788398;
+}
+
+.auth-submit {
+  width:100%;
+  padding:14px;
+  margin-top:7px;
+}
+
+.auth-switch {
+  margin-top:20px;
+  text-align:center;
+  font-size:14px;
+  color:var(--muted);
+}
+
+.auth-switch button {
+  border:none;
+  background:none;
+  color:#b9adff;
+  font-weight:bold;
+  padding:5px;
+}
+
+.auth-message {
+  display:none;
+  padding:12px;
+  margin-top:15px;
+  border-radius:10px;
+  font-size:13px;
+  line-height:1.5;
+}
+
+.auth-message.show {
+  display:block;
+}
+
+.auth-message.success {
+  background:#174b36;
+  color:#b7f5d4;
+}
+
+.auth-message.error {
+  background:#542b35;
+  color:#ffd0d8;
+}
+
+.auth-message.info {
+  background:#30314f;
+  color:#dedaff;
+}
+
+.account-info {
+  display:none;
+  margin-top:15px;
+  padding:13px;
+  background:var(--surface2);
+  border-radius:12px;
+  color:#d8dbea;
+  font-size:13px;
+  line-height:1.7;
 }
 
 @media(max-width:850px) {
@@ -435,8 +532,13 @@ footer strong {
   </div>
 
   <div class="header-actions">
-    <button onclick="showNotice()">Desarrolladores</button>
-    <button class="login" onclick="showNotice()">Iniciar sesión</button>
+    <button id="developerButton" onclick="handleDeveloperButton()">
+      Desarrolladores
+    </button>
+
+    <button class="login" id="accountButton" onclick="handleAccountButton()">
+      Iniciar sesión
+    </button>
   </div>
 </header>
 
@@ -497,7 +599,7 @@ footer strong {
       Tus proyectos pueden llegar a nuevos usuarios.
     </p>
   </div>
-  <button class="primary-btn" onclick="showNotice()">
+  <button class="primary-btn" onclick="handleDeveloperButton()">
     Conocer más
   </button>
 </section>
@@ -509,6 +611,8 @@ footer strong {
   Una plataforma de MYTHERION STUDIOS.<br>
   © 2026 MYTHERION STUDIOS. Todos los derechos reservados.
 </footer>
+
+<!-- MODAL DE APLICACIONES -->
 
 <div class="modal" id="appModal" onclick="closeOutside(event)">
   <div class="modal-content">
@@ -531,10 +635,83 @@ footer strong {
   </div>
 </div>
 
+<!-- MODAL DE REGISTRO E INICIO DE SESIÓN -->
+
+<div class="modal" id="authModal" onclick="closeAuthOutside(event)">
+  <div class="modal-content auth-content">
+
+    <button class="close" onclick="closeAuthModal()">×</button>
+
+    <div class="logo-icon">M</div>
+
+    <h2 id="authTitle">Bienvenido a M-Store</h2>
+
+    <div class="auth-subtitle" id="authSubtitle">
+      Inicia sesión para acceder a tu cuenta.
+    </div>
+
+    <form class="auth-form" id="authForm">
+
+      <div id="nameField" style="display:none">
+        <label for="displayName">Nombre de usuario</label>
+        <input
+          id="displayName"
+          type="text"
+          placeholder="Tu nombre"
+          maxlength="60"
+          autocomplete="name"
+        >
+      </div>
+
+      <div>
+        <label for="email">Correo electrónico</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="ejemplo@correo.com"
+          autocomplete="email"
+          required
+        >
+      </div>
+
+      <div>
+        <label for="password">Contraseña</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Tu contraseña"
+          minlength="8"
+          autocomplete="current-password"
+          required
+        >
+      </div>
+
+      <button class="primary-btn auth-submit" id="authSubmit" type="submit">
+        Iniciar sesión
+      </button>
+
+    </form>
+
+    <div class="auth-message" id="authMessage"></div>
+
+    <div class="auth-switch" id="authSwitch">
+      ¿No tienes una cuenta?
+      <button type="button" onclick="switchAuthMode('register')">
+        Crear cuenta
+      </button>
+    </div>
+
+    <div class="account-info" id="accountInfo"></div>
+
+  </div>
+</div>
+
 <!-- LIBRERÍA SUPABASE -->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
+
 // =====================================
 // CONFIGURACIÓN SUPABASE
 // =====================================
@@ -549,6 +726,11 @@ const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
+
+const SITE_URL = "https://srambar-cpu.github.io/M-Store/";
+
+let currentUser = null;
+let authMode = "login";
 
 // =====================================
 // CATÁLOGO DE DEMOSTRACIÓN
@@ -717,47 +899,328 @@ function closeOutside(event) {
 }
 
 // =====================================
+// SISTEMA DE AUTENTICACIÓN
+// =====================================
+
+function showAuthModal(mode = "login") {
+  document.getElementById("authModal").classList.add("show");
+  switchAuthMode(mode);
+}
+
+function closeAuthModal() {
+  document.getElementById("authModal").classList.remove("show");
+  clearAuthMessage();
+}
+
+function closeAuthOutside(event) {
+  if (event.target.id === "authModal") {
+    closeAuthModal();
+  }
+}
+
+function switchAuthMode(mode) {
+  authMode = mode;
+
+  const nameField = document.getElementById("nameField");
+  const title = document.getElementById("authTitle");
+  const subtitle = document.getElementById("authSubtitle");
+  const submit = document.getElementById("authSubmit");
+  const password = document.getElementById("password");
+  const switchArea = document.getElementById("authSwitch");
+
+  clearAuthMessage();
+
+  if (mode === "register") {
+    nameField.style.display = "block";
+    title.textContent = "Crear cuenta";
+    subtitle.textContent =
+      "Regístrate para formar parte de la comunidad M-Store.";
+    submit.textContent = "Crear mi cuenta";
+    password.autocomplete = "new-password";
+
+    switchArea.innerHTML = `
+      ¿Ya tienes una cuenta?
+      <button type="button" onclick="switchAuthMode('login')">
+        Iniciar sesión
+      </button>
+    `;
+
+  } else {
+    nameField.style.display = "none";
+    title.textContent = "Bienvenido a M-Store";
+    subtitle.textContent =
+      "Inicia sesión para acceder a tu cuenta.";
+    submit.textContent = "Iniciar sesión";
+    password.autocomplete = "current-password";
+
+    switchArea.innerHTML = `
+      ¿No tienes una cuenta?
+      <button type="button" onclick="switchAuthMode('register')">
+        Crear cuenta
+      </button>
+    `;
+  }
+}
+
+function showAuthMessage(message,type) {
+  const element = document.getElementById("authMessage");
+
+  element.textContent = message;
+  element.className = "auth-message show " + type;
+}
+
+function clearAuthMessage() {
+  const element = document.getElementById("authMessage");
+
+  element.textContent = "";
+  element.className = "auth-message";
+}
+
+// =====================================
+// REGISTRO E INICIO DE SESIÓN
+// =====================================
+
+document.getElementById("authForm").addEventListener(
+  "submit",
+  async function(event) {
+
+    event.preventDefault();
+
+    const email = document.getElementById("email")
+      .value.trim();
+
+    const password = document.getElementById("password")
+      .value;
+
+    const displayName = document.getElementById("displayName")
+      .value.trim();
+
+    const submit = document.getElementById("authSubmit");
+
+    if (password.length < 8) {
+      showAuthMessage(
+        "La contraseña debe tener al menos 8 caracteres.",
+        "error"
+      );
+      return;
+    }
+
+    if (authMode === "register" && !displayName) {
+      showAuthMessage(
+        "Escribe el nombre que aparecerá en tu perfil.",
+        "error"
+      );
+      return;
+    }
+
+    submit.disabled = true;
+    submit.textContent = "Procesando...";
+
+    try {
+
+      if (authMode === "register") {
+
+        const { data, error } = await supabaseClient.auth.signUp({
+          email: email,
+          password: password,
+          options: {
+            data: {
+              display_name: displayName
+            },
+            emailRedirectTo: SITE_URL
+          }
+        });
+
+        if (error) throw error;
+
+        if (data.session) {
+          showAuthMessage(
+            "¡Tu cuenta se creó correctamente! Ya puedes utilizar M-Store.",
+            "success"
+          );
+        } else {
+          showAuthMessage(
+            "¡Registro realizado! Revisa tu correo electrónico y confirma tu cuenta antes de iniciar sesión.",
+            "success"
+          );
+        }
+
+        document.getElementById("authForm").reset();
+
+      } else {
+
+        const { data, error } =
+          await supabaseClient.auth.signInWithPassword({
+            email: email,
+            password: password
+          });
+
+        if (error) throw error;
+
+        currentUser = data.user;
+        updateAuthUI(currentUser);
+
+        showAuthMessage(
+          "¡Bienvenido! Has iniciado sesión correctamente.",
+          "success"
+        );
+
+        setTimeout(() => {
+          closeAuthModal();
+        }, 900);
+
+      }
+
+    } catch (error) {
+
+      console.error("Error de autenticación:",error);
+
+      let message = error.message ||
+        "No se pudo completar la operación.";
+
+      if (message.toLowerCase().includes("invalid login")) {
+        message = "Correo o contraseña incorrectos.";
+      }
+
+      if (message.toLowerCase().includes("already registered")) {
+        message = "Este correo ya tiene una cuenta registrada.";
+      }
+
+      if (message.toLowerCase().includes("password")) {
+        message = "La contraseña no cumple los requisitos.";
+      }
+
+      showAuthMessage(message,"error");
+
+    } finally {
+
+      submit.disabled = false;
+
+      submit.textContent =
+        authMode === "register"
+          ? "Crear mi cuenta"
+          : "Iniciar sesión";
+
+    }
+
+  }
+);
+
+// =====================================
+// ACTUALIZAR INTERFAZ DE CUENTA
+// =====================================
+
+function updateAuthUI(user) {
+
+  currentUser = user || null;
+
+  const accountButton =
+    document.getElementById("accountButton");
+
+  if (currentUser) {
+
+    accountButton.textContent = "Cerrar sesión";
+
+    const displayName =
+      currentUser.user_metadata?.display_name ||
+      currentUser.email;
+
+    accountButton.title = displayName;
+
+  } else {
+
+    accountButton.textContent = "Iniciar sesión";
+    accountButton.title = "Acceder a M-Store";
+
+  }
+
+}
+
+// =====================================
+// BOTÓN DE CUENTA
+// =====================================
+
+async function handleAccountButton() {
+
+  if (!currentUser) {
+    showAuthModal("login");
+    return;
+  }
+
+  const confirmLogout = confirm(
+    "¿Quieres cerrar tu sesión de M-Store?"
+  );
+
+  if (!confirmLogout) return;
+
+  const { error } = await supabaseClient.auth.signOut();
+
+  if (error) {
+    alert("No se pudo cerrar la sesión: " + error.message);
+    return;
+  }
+
+  currentUser = null;
+  updateAuthUI(null);
+
+  alert("Has cerrado tu sesión correctamente.");
+
+}
+
+// =====================================
+// ACCESO A DESARROLLADORES
+// =====================================
+
+function handleDeveloperButton() {
+
+  if (!currentUser) {
+    showAuthModal("login");
+    return;
+  }
+
+  alert(
+    "¡Ya tienes una sesión activa! El sistema de solicitudes y el panel de desarrolladores se construirán en la siguiente etapa."
+  );
+
+}
+
+// =====================================
+// RECUPERAR SESIÓN Y ESCUCHAR CAMBIOS
+// =====================================
+
+async function initializeAuth() {
+
+  const {
+    data: { session },
+    error
+  } = await supabaseClient.auth.getSession();
+
+  if (error) {
+    console.error("Error recuperando sesión:",error);
+  }
+
+  updateAuthUI(session?.user || null);
+
+  supabaseClient.auth.onAuthStateChange(
+    (event,session) => {
+
+      updateAuthUI(session?.user || null);
+
+      console.log("Estado de autenticación:",event);
+
+    }
+  );
+
+}
+
+// =====================================
 // AVISOS
 // =====================================
 
 function showNotice() {
-  alert("Esta función estará disponible próximamente en M-Store.");
-}
-
-// =====================================
-// PRUEBA DE CONEXIÓN CON SUPABASE
-// =====================================
-
-async function testSupabaseConnection() {
-  const status = document.createElement("div");
-
-  status.id = "connection-status";
-  status.textContent = "Conectando con Supabase...";
-  document.body.appendChild(status);
-
-  try {
-    const { data, error } = await supabaseClient
-      .from("categories")
-      .select("id")
-      .limit(1);
-
-    if (error) {
-      console.error("Error Supabase:",error);
-      status.textContent = "⚠ Error de conexión o permisos";
-      status.style.background = "#8b3030";
-      return;
-    }
-
-    console.log("M-Store conectado:",data);
-
-    status.textContent = "✓ M-Store conectado con Supabase";
-    status.style.background = "#216b49";
-
-  } catch (error) {
-    console.error(error);
-    status.textContent = "⚠ No se pudo conectar";
-    status.style.background = "#8b3030";
-  }
+  alert(
+    "Esta función estará disponible próximamente en M-Store."
+  );
 }
 
 // =====================================
@@ -765,7 +1228,7 @@ async function testSupabaseConnection() {
 // =====================================
 
 renderApps();
-testSupabaseConnection();
+initializeAuth();
 
 </script>
 
