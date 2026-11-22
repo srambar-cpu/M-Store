@@ -32,7 +32,7 @@ main{max-width:1250px;margin:auto;padding:35px 24px 80px}
 .developer-banner p{color:var(--muted);margin-top:8px;line-height:1.5}.primary-btn{border:none;border-radius:12px;padding:12px 20px}.primary-btn:disabled{opacity:.6;cursor:not-allowed}
 footer{border-top:1px solid var(--border);padding:30px 6%;color:var(--muted);text-align:center;font-size:13px;line-height:2}footer strong{color:white}
 .modal{position:fixed;inset:0;background:#000b;z-index:30;display:none;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}
-.modal-content{background:#1b202c;border:1px solid var(--border);border-radius:22px;padding:27px;width:100%;max-width:520px;max-height:92vh;overflow-y:auto;position:relative}.modal-content.wide{max-width:850px}
+.modal-content{background:#1b202c;border:1px solid var(--border);border-radius:22px;padding:27px;width:100%;max-width:520px;max-height:92vh;overflow-y:auto;position:relative}.modal-content.wide{max-width:900px}
 .close{position:absolute;right:18px;top:15px;background:var(--surface2);color:white;border:none;width:35px;height:35px;border-radius:50%;font-size:20px}
 .modal-icon{font-size:55px;margin:15px 0}.modal-content h2{margin-bottom:8px}.modal-content p{color:var(--muted);line-height:1.6;margin:14px 0}
 .modal-details{background:var(--surface2);padding:15px;border-radius:13px;line-height:2;color:#d2d6e1;font-size:14px;margin:18px 0}
@@ -52,14 +52,31 @@ footer{border-top:1px solid var(--border);padding:30px 6%;color:var(--muted);tex
 .stat-card{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:17px}.stat-card span{display:block;color:var(--muted);font-size:12px;margin-bottom:10px}.stat-card strong{font-size:27px}
 .stat-pending strong{color:#ffca70}.stat-approved strong{color:#72e0a6}.stat-rejected strong{color:#ff8999}
 .admin-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.admin-toolbar button{background:var(--surface2);border:1px solid var(--border);color:white;border-radius:20px;padding:9px 15px}
-.admin-toolbar button.active{background:#7561e5;border-color:#7561e5}.request-card{background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:17px;margin-bottom:13px}
-.request-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.request-card h3{font-size:17px;overflow-wrap:anywhere}.request-email{font-size:12px;color:var(--muted);margin-top:6px;overflow-wrap:anywhere}
-.request-description{font-size:14px;color:#c4cada;line-height:1.6;margin:15px 0}.request-status{font-size:12px;font-weight:bold}.request-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
-.request-actions button{border:1px solid var(--border);border-radius:10px;padding:10px 15px;color:white;background:var(--surface2)}.request-actions .approve{background:#176342;border-color:#176342}.request-actions .reject{background:#672d3b;border-color:#672d3b}
+.admin-toolbar button.active{background:#7561e5;border-color:#7561e5}
+.admin-tabs{display:flex;gap:10px;border-bottom:1px solid var(--border);margin:20px 0;padding-bottom:12px}
+.admin-tabs button{background:var(--surface2);border:1px solid var(--border);color:white;border-radius:10px;padding:11px 17px}
+.admin-tabs button.active{background:#7561e5;border-color:#7561e5}
+.request-card,.publication-card{background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:17px;margin-bottom:13px;min-width:0}
+.request-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.request-card h3,.publication-card h3{font-size:17px;overflow-wrap:anywhere}
+.request-email{font-size:12px;color:var(--muted);margin-top:6px;overflow-wrap:anywhere}
+.request-description{font-size:14px;color:#c4cada;line-height:1.6;margin:15px 0}.request-status{font-size:12px;font-weight:bold}
+.request-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+.request-actions button{border:1px solid var(--border);border-radius:10px;padding:10px 15px;color:white;background:var(--surface2)}
+.request-actions .approve{background:#176342;border-color:#176342}.request-actions .reject{background:#672d3b;border-color:#672d3b}
 .admin-empty{text-align:center;color:var(--muted);padding:35px 15px;background:var(--surface);border:1px solid var(--border);border-radius:14px}
 .help-text{font-size:12px;color:var(--muted);line-height:1.5;margin-top:5px}.file-input{padding:10px!important}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.form-grid>div{min-width:0}
+.publication-top{display:flex;gap:15px;align-items:flex-start}
+.publication-icon{width:76px;height:76px;flex-shrink:0;border-radius:16px;object-fit:cover;background:var(--surface2)}
+.publication-info{min-width:0;flex:1}
+.publication-meta{font-size:12px;color:var(--muted);line-height:1.8;margin-top:7px;overflow-wrap:anywhere}
+.publication-description{font-size:13px;line-height:1.6;color:#c4cada;margin-top:13px;white-space:pre-wrap;overflow-wrap:anywhere}
+.publication-images{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+.publication-images img{width:92px;height:145px;object-fit:cover;border-radius:9px;border:1px solid var(--border)}
+.publication-version{background:var(--surface2);border-radius:11px;padding:13px;margin-top:13px;font-size:13px;line-height:1.8;color:#d2d6e1;overflow-wrap:anywhere}
+.publication-version a{color:#b9adff}
+.publication-status{font-size:12px;font-weight:bold;margin-top:8px}
 @media(max-width:850px){.app-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-art{font-size:75px;padding:0}}
-@media(max-width:550px){header{padding:10px 15px;align-items:flex-start}.logo{font-size:19px}.header-actions button{padding:8px 10px;font-size:11px}main{padding:22px 15px 60px}.hero{padding:27px 22px;min-height:230px}.hero-art{display:none}.developer-banner{align-items:flex-start;flex-direction:column}.admin-stats{gap:7px}.stat-card{padding:12px}.stat-card strong{font-size:22px}.form-grid{grid-template-columns:1fr}.modal-content{padding:22px 17px}}
+@media(max-width:550px){header{padding:10px 15px;align-items:flex-start}.logo{font-size:19px}.header-actions button{padding:8px 10px;font-size:11px}main{padding:22px 15px 60px}.hero{padding:27px 22px;min-height:230px}.hero-art{display:none}.developer-banner{align-items:flex-start;flex-direction:column}.admin-stats{gap:7px}.stat-card{padding:12px}.stat-card strong{font-size:22px}.form-grid{grid-template-columns:1fr}.modal-content{padding:22px 17px}.publication-top{gap:10px}.publication-icon{width:60px;height:60px}.admin-tabs button{flex:1;padding:10px 7px;font-size:12px}}
 </style>
 </head>
 <body>
@@ -72,6 +89,7 @@ footer{border-top:1px solid var(--border);padding:30px 6%;color:var(--muted);tex
     <button class="login" id="accountButton" onclick="handleAccountButton()">Iniciar sesión</button>
   </div>
 </header>
+
 <main>
 <section class="hero"><div class="hero-content"><div class="eyebrow">MYTHERION STUDIOS PRESENTA</div><h1>Todo lo que buscas,<br>en un solo lugar.</h1><p>Descubre aplicaciones y juegos para Android. Explora nuevas experiencias en M-Store.</p></div><div class="hero-art">✦</div></section>
 <section class="search-area"><div class="search-box"><span>⌕</span><input id="search" type="search" placeholder="Buscar aplicaciones y juegos..." oninput="renderApps()"></div></section>
@@ -86,17 +104,21 @@ footer{border-top:1px solid var(--border);padding:30px 6%;color:var(--muted);tex
 <div class="modal" id="appModal" onclick="closeOutside(event)"><div class="modal-content"><button class="close" onclick="closeModal()">×</button><div class="modal-icon" id="modalIcon"></div><h2 id="modalTitle"></h2><div id="modalCategory" class="eyebrow"></div><p id="modalDescription"></p><div class="modal-details" id="modalDetails"></div><button class="primary-btn" style="width:100%" onclick="showNotice()">Descargar próximamente</button></div></div>
 
 <div class="modal" id="authModal" onclick="closeAuthOutside(event)"><div class="modal-content auth-content"><button class="close" onclick="closeAuthModal()">×</button><div class="logo-icon">M</div><h2 id="authTitle">Bienvenido a M-Store</h2><div class="auth-subtitle" id="authSubtitle">Inicia sesión para acceder a tu cuenta.</div>
-<form class="auth-form" id="authForm"><div id="nameField" style="display:none"><label for="displayName">Nombre de usuario</label><input id="displayName" type="text" placeholder="Tu nombre" maxlength="60" autocomplete="name"></div>
+<form class="auth-form" id="authForm">
+<div id="nameField" style="display:none"><label for="displayName">Nombre de usuario</label><input id="displayName" type="text" placeholder="Tu nombre" maxlength="60" autocomplete="name"></div>
 <div><label for="email">Correo electrónico</label><input id="email" type="email" placeholder="ejemplo@correo.com" autocomplete="email" required></div>
 <div><label for="password">Contraseña</label><input id="password" type="password" placeholder="Tu contraseña" minlength="8" autocomplete="current-password" required></div>
-<button class="primary-btn auth-submit" id="authSubmit" type="submit">Iniciar sesión</button></form><div class="auth-message" id="authMessage"></div><div class="auth-switch" id="authSwitch">¿No tienes una cuenta? <button type="button" onclick="switchAuthMode('register')">Crear cuenta</button></div>
+<button class="primary-btn auth-submit" id="authSubmit" type="submit">Iniciar sesión</button>
+</form><div class="auth-message" id="authMessage"></div><div class="auth-switch" id="authSwitch">¿No tienes una cuenta? <button type="button" onclick="switchAuthMode('register')">Crear cuenta</button></div>
 </div></div>
 
 <div class="modal" id="developerModal" onclick="closeDeveloperOutside(event)"><div class="modal-content"><button class="close" onclick="closeDeveloperModal()">×</button><div class="logo-icon">M</div><h2 id="developerTitle">Programa de desarrolladores</h2><div class="auth-subtitle" id="developerSubtitle">Solicita acceso para publicar tus aplicaciones y juegos en M-Store.</div>
-<form class="auth-form" id="developerForm"><div><label for="studioName">Nombre del estudio o desarrollador</label><input id="studioName" type="text" maxlength="100" placeholder="Ej. MYTHERION STUDIOS" required></div>
+<form class="auth-form" id="developerForm">
+<div><label for="studioName">Nombre del estudio o desarrollador</label><input id="studioName" type="text" maxlength="100" placeholder="Ej. MYTHERION STUDIOS" required></div>
 <div><label for="studioDescription">Descripción</label><textarea id="studioDescription" maxlength="1000" placeholder="Cuéntanos qué aplicaciones o juegos desarrollas..." required></textarea></div>
 <div><label for="studioWebsite">Sitio web (opcional)</label><input id="studioWebsite" type="url" maxlength="255" placeholder="https://tusitio.com"></div>
-<button class="primary-btn auth-submit" id="developerSubmit" type="submit">Enviar solicitud</button></form><div class="auth-message" id="developerMessage"></div><div id="developerStatus" style="display:none"></div>
+<button class="primary-btn auth-submit" id="developerSubmit" type="submit">Enviar solicitud</button>
+</form><div class="auth-message" id="developerMessage"></div><div id="developerStatus" style="display:none"></div>
 </div></div>
 
 <div class="modal" id="publishModal" onclick="closePublishOutside(event)"><div class="modal-content wide"><button class="close" onclick="closePublishModal()">×</button><div class="logo-icon">M</div>
@@ -104,7 +126,7 @@ footer{border-top:1px solid var(--border);padding:30px 6%;color:var(--muted);tex
 <form class="auth-form" id="publishForm">
 <div class="form-grid">
 <div><label for="appTitle">Nombre de la aplicación o juego *</label><input id="appTitle" maxlength="100" required placeholder="Ej. Mytherion Music"></div>
-<div><label for="appType">Tipo *</label><select id="appType" required onchange="loadPublishCategories()"><option value="app">Aplicación</option><option value="game">Juego</option></select></div>
+<div><label for="appType">Tipo *</label><select id="appType" required><option value="app">Aplicación</option><option value="game">Juego</option></select></div>
 <div><label for="appCategory">Categoría *</label><select id="appCategory" required><option value="">Cargando categorías...</option></select></div>
 <div><label for="appAge">Clasificación por edad *</label><select id="appAge" required><option value="3+">3+</option><option value="7+">7+</option><option value="12+">12+</option><option value="16+">16+</option><option value="18+">18+</option></select></div>
 </div>
@@ -126,26 +148,72 @@ footer{border-top:1px solid var(--border);padding:30px 6%;color:var(--muted);tex
 </form><div class="auth-message" id="publishMessage"></div>
 </div></div>
 
-<div class="modal" id="adminModal" onclick="closeAdminOutside(event)"><div class="modal-content wide"><button class="close" onclick="closeAdminPanel()">×</button><div class="logo-icon">M</div>
-<div class="admin-heading"><div class="eyebrow">MYTHERION STUDIOS</div><h2>Panel de administración</h2><p>Gestiona las solicitudes de desarrolladores de M-Store.</p></div>
-<div class="admin-stats"><div class="stat-card stat-pending"><span>PENDIENTES</span><strong id="pendingCount">0</strong></div><div class="stat-card stat-approved"><span>APROBADAS</span><strong id="approvedCount">0</strong></div><div class="stat-card stat-rejected"><span>RECHAZADAS</span><strong id="rejectedCount">0</strong></div></div>
-<div class="admin-toolbar"><button class="active" onclick="filterAdminRequests('all',this)">Todas</button><button onclick="filterAdminRequests('pending',this)">Pendientes</button><button onclick="filterAdminRequests('approved',this)">Aprobadas</button><button onclick="filterAdminRequests('rejected',this)">Rechazadas</button><button onclick="loadAdminRequests()">↻ Actualizar</button></div>
-<div class="auth-message" id="adminMessage"></div><div id="adminRequests"><div class="admin-empty">Cargando solicitudes...</div></div>
-</div></div>
+<!-- PANEL ADMINISTRATIVO -->
+<div class="modal" id="adminModal" onclick="closeAdminOutside(event)">
+<div class="modal-content wide">
+<button class="close" onclick="closeAdminPanel()">×</button>
+<div class="logo-icon">M</div>
+<div class="admin-heading">
+<div class="eyebrow">MYTHERION STUDIOS</div>
+<h2>Panel de administración</h2>
+<p>Gestiona desarrolladores, aplicaciones y juegos de M-Store.</p>
+</div>
+
+<div class="admin-tabs">
+<button id="tabDevelopers" class="active" onclick="switchAdminTab('developers')">Desarrolladores</button>
+<button id="tabPublications" onclick="switchAdminTab('publications')">Publicaciones</button>
+</div>
+
+<section id="developersSection">
+<div class="admin-stats">
+<div class="stat-card stat-pending"><span>PENDIENTES</span><strong id="pendingCount">0</strong></div>
+<div class="stat-card stat-approved"><span>APROBADAS</span><strong id="approvedCount">0</strong></div>
+<div class="stat-card stat-rejected"><span>RECHAZADAS</span><strong id="rejectedCount">0</strong></div>
+</div>
+<div class="admin-toolbar" id="developerFilters">
+<button class="active" onclick="filterAdminRequests('all',this)">Todas</button>
+<button onclick="filterAdminRequests('pending',this)">Pendientes</button>
+<button onclick="filterAdminRequests('approved',this)">Aprobadas</button>
+<button onclick="filterAdminRequests('rejected',this)">Rechazadas</button>
+<button onclick="loadAdminRequests()">↻ Actualizar</button>
+</div>
+<div class="auth-message" id="adminMessage"></div>
+<div id="adminRequests"><div class="admin-empty">Cargando solicitudes...</div></div>
+</section>
+
+<section id="publicationsSection" style="display:none">
+<div class="admin-stats">
+<div class="stat-card stat-pending"><span>PENDIENTES</span><strong id="appsPendingCount">0</strong></div>
+<div class="stat-card stat-approved"><span>APROBADAS</span><strong id="appsApprovedCount">0</strong></div>
+<div class="stat-card stat-rejected"><span>RECHAZADAS</span><strong id="appsRejectedCount">0</strong></div>
+</div>
+<div class="admin-toolbar" id="publicationFilters">
+<button class="active" onclick="filterAdminApps('pending',this)">Pendientes</button>
+<button onclick="filterAdminApps('approved',this)">Aprobadas</button>
+<button onclick="filterAdminApps('rejected',this)">Rechazadas</button>
+<button onclick="loadAdminApps()">↻ Actualizar</button>
+</div>
+<div class="auth-message" id="adminAppsMessage"></div>
+<div id="adminApps"><div class="admin-empty">Selecciona Publicaciones para cargar los registros.</div></div>
+</section>
+</div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 "use strict";
+
 const SUPABASE_URL="https://jleybxvwvoyuqmgrchzk.supabase.co";
 const SUPABASE_KEY="sb_publishable_liYYqQ7WmzDkmJ0qRh-0AA_zrNeXCrz";
 const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 const SITE_URL="https://srambar-cpu.github.io/M-Store/";
 const MEDIA_BUCKET="app-media";
 const APK_BUCKET="app-submissions";
-const MAX_IMAGE_BYTES=5*1024*1024;
-const MAX_APK_BYTES=50*1024*1024;
+
 let currentUser=null,currentRole="user",authMode="login";
-let developerRequestExists=false,adminRequests=[],adminFilter="all";
+let developerRequestExists=false;
+let adminRequests=[],adminFilter="all";
+let adminApps=[],adminAppsFilter="pending";
 let selectedCategory="Todos",storeApps=[];
 
 const demoApps=[
@@ -164,6 +232,8 @@ function escapeHTML(value){return String(value??"").replace(/[&<>"']/g,c=>({"&":
 function showMessage(id,message,type){const node=el(id);node.textContent=message;node.className="auth-message show "+type}
 function clearMessage(id){const node=el(id);node.textContent="";node.className="auth-message"}
 function showNotice(){alert("La descarga pública estará disponible cuando terminemos el sistema de aprobación y distribución de APK.")}
+
+/* CATÁLOGO */
 function renderApps(){
  const grid=el("appGrid"),term=el("search").value.trim().toLowerCase();
  const filtered=storeApps.filter(a=>(selectedCategory==="Todos"||a.type===selectedCategory||a.category===selectedCategory)&&(!term||a.name.toLowerCase().includes(term)||a.category.toLowerCase().includes(term)));
@@ -195,6 +265,7 @@ function openApp(app){
 function closeModal(){el("appModal").classList.remove("show")}
 function closeOutside(e){if(e.target.id==="appModal")closeModal()}
 
+/* AUTENTICACIÓN */
 function showAuthModal(mode="login"){el("authModal").classList.add("show");switchAuthMode(mode)}
 function closeAuthModal(){el("authModal").classList.remove("show");clearMessage("authMessage")}
 function closeAuthOutside(e){if(e.target.id==="authModal")closeAuthModal()}
@@ -208,7 +279,8 @@ function switchAuthMode(mode){
  clearMessage("authMessage");
 }
 el("authForm").addEventListener("submit",async e=>{
- e.preventDefault();const email=el("email").value.trim(),password=el("password").value,displayName=el("displayName").value.trim(),btn=el("authSubmit");
+ e.preventDefault();
+ const email=el("email").value.trim(),password=el("password").value,displayName=el("displayName").value.trim(),btn=el("authSubmit");
  if(password.length<8){showMessage("authMessage","La contraseña debe tener al menos 8 caracteres.","error");return}
  if(authMode==="register"&&!displayName){showMessage("authMessage","Escribe el nombre que aparecerá en tu perfil.","error");return}
  btn.disabled=true;btn.textContent="Procesando...";
@@ -221,8 +293,12 @@ el("authForm").addEventListener("submit",async e=>{
    const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});if(error)throw error;
    await updateAuthUI(data.user);showMessage("authMessage","¡Bienvenido! Has iniciado sesión correctamente.","success");setTimeout(closeAuthModal,900);
   }
- }catch(error){console.error(error);let m=error.message||"No se pudo completar la operación.";if(m.toLowerCase().includes("invalid login"))m="Correo o contraseña incorrectos.";if(m.toLowerCase().includes("already registered"))m="Este correo ya tiene una cuenta registrada.";showMessage("authMessage",m,"error")}
- finally{btn.disabled=false;btn.textContent=authMode==="register"?"Crear mi cuenta":"Iniciar sesión"}
+ }catch(error){
+  console.error(error);let m=error.message||"No se pudo completar la operación.";
+  if(m.toLowerCase().includes("invalid login"))m="Correo o contraseña incorrectos.";
+  if(m.toLowerCase().includes("already registered"))m="Este correo ya tiene una cuenta registrada.";
+  showMessage("authMessage",m,"error");
+ }finally{btn.disabled=false;btn.textContent=authMode==="register"?"Crear mi cuenta":"Iniciar sesión"}
 });
 
 async function updateAuthUI(user){
@@ -241,10 +317,12 @@ async function updateAuthUI(user){
 async function handleAccountButton(){
  if(!currentUser){showAuthModal("login");return}
  if(!confirm("¿Quieres cerrar tu sesión de M-Store?"))return;
- const {error}=await supabaseClient.auth.signOut();if(error){alert("No se pudo cerrar la sesión: "+error.message);return}
+ const {error}=await supabaseClient.auth.signOut();
+ if(error){alert("No se pudo cerrar la sesión: "+error.message);return}
  await updateAuthUI(null);alert("Has cerrado tu sesión correctamente.");
 }
 
+/* DESARROLLADORES */
 function showDeveloperMessage(message,type){showMessage("developerMessage",message,type)}
 function clearDeveloperMessage(){clearMessage("developerMessage")}
 function closeDeveloperModal(){el("developerModal").classList.remove("show");clearDeveloperMessage()}
@@ -252,11 +330,12 @@ function closeDeveloperOutside(e){if(e.target.id==="developerModal")closeDevelop
 function resetDeveloperModal(){el("developerForm").style.display="flex";el("developerStatus").style.display="none";el("developerSubmit").disabled=false;el("developerSubmit").textContent="Enviar solicitud";clearDeveloperMessage()}
 async function handleDeveloperButton(){
  if(!currentUser){showAuthModal("login");showMessage("authMessage","Inicia sesión para solicitar acceso al programa de desarrolladores.","info");return}
- el("developerModal").classList.add("show");resetDeveloperModal();el("developerTitle").textContent="Comprobando solicitud...";el("developerSubtitle").textContent="Estamos consultando tu información.";el("developerForm").style.display="none";
+ el("developerModal").classList.add("show");resetDeveloperModal();
+ el("developerTitle").textContent="Comprobando solicitud...";el("developerSubtitle").textContent="Estamos consultando tu información.";el("developerForm").style.display="none";
  try{
   const {data,error}=await supabaseClient.from("developer_profiles").select("user_id,studio_name,description,website,status,created_at").eq("user_id",currentUser.id).maybeSingle();if(error)throw error;
-  developerRequestExists=!!data;
-  if(data)showDeveloperStatus(data);else{el("developerTitle").textContent="Solicita ser desarrollador";el("developerSubtitle").textContent="Completa los datos de tu estudio o proyecto para solicitar acceso.";el("developerForm").reset();el("developerForm").style.display="flex"}
+  if(data)showDeveloperStatus(data);
+  else{el("developerTitle").textContent="Solicita ser desarrollador";el("developerSubtitle").textContent="Completa los datos de tu estudio o proyecto para solicitar acceso.";el("developerForm").reset();el("developerForm").style.display="flex"}
  }catch(error){console.error(error);el("developerTitle").textContent="No pudimos consultar tu solicitud";showDeveloperMessage("Error: "+error.message,"error")}
 }
 function showDeveloperStatus(r){
@@ -267,19 +346,18 @@ function showDeveloperStatus(r){
 }
 el("developerForm").addEventListener("submit",async e=>{
  e.preventDefault();if(!currentUser){showDeveloperMessage("Tu sesión no está activa. Inicia sesión nuevamente.","error");return}
- if(developerRequestExists){showDeveloperMessage("Ya existe una solicitud asociada a tu cuenta.","info");return}
  const studioName=el("studioName").value.trim(),description=el("studioDescription").value.trim(),website=el("studioWebsite").value.trim();
  if(!studioName||!description){showDeveloperMessage("Completa el nombre y la descripción.","error");return}
  if(website){try{const u=new URL(website);if(!["http:","https:"].includes(u.protocol))throw Error()}catch{showDeveloperMessage("Escribe una dirección web válida, comenzando con https://","error");return}}
  const btn=el("developerSubmit");btn.disabled=true;btn.textContent="Enviando solicitud...";
  try{
   const {data,error}=await supabaseClient.from("developer_profiles").insert({user_id:currentUser.id,studio_name:studioName,description,website:website||null,status:"pending"}).select("user_id,studio_name,description,website,status,created_at").single();if(error)throw error;
-  developerRequestExists=true;showDeveloperStatus(data);
+  showDeveloperStatus(data);
  }catch(error){console.error(error);showDeveloperMessage("No se pudo enviar la solicitud: "+error.message,"error")}
  finally{btn.disabled=false;btn.textContent="Enviar solicitud"}
 });
 
-// PUBLICACIÓN DE APLICACIONES Y JUEGOS
+/* PUBLICACIÓN DE APLICACIONES Y JUEGOS */
 function closePublishModal(){el("publishModal").classList.remove("show");clearMessage("publishMessage")}
 function closePublishOutside(e){if(e.target.id==="publishModal")closePublishModal()}
 async function openPublishModal(){
@@ -301,8 +379,8 @@ function fileExtension(file){return file.name.split(".").pop().toLowerCase()}
 function validateImage(file){return ["png","jpg","jpeg","webp"].includes(fileExtension(file))&&file.size<=5*1024*1024}
 function makeSlug(text){return text.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,65)}
 async function uploadPublicImage(file,path){
- const {error}=await supabaseClient.storage.from("app-media").upload(path,file,{contentType:file.type||"application/octet-stream",upsert:false});if(error)throw error;
- const {data}=supabaseClient.storage.from("app-media").getPublicUrl(path);return data.publicUrl;
+ const {error}=await supabaseClient.storage.from(MEDIA_BUCKET).upload(path,file,{contentType:file.type||"application/octet-stream",upsert:false});if(error)throw error;
+ const {data}=supabaseClient.storage.from(MEDIA_BUCKET).getPublicUrl(path);return data.publicUrl;
 }
 el("publishForm").addEventListener("submit",async e=>{
  e.preventDefault();
@@ -321,11 +399,8 @@ el("publishForm").addEventListener("submit",async e=>{
   const {data:dev,error:devError}=await supabaseClient.from("developer_profiles").select("status").eq("user_id",currentUser.id).maybeSingle();
   if(devError)throw devError;if(dev?.status!=="approved")throw new Error("Tu cuenta ya no tiene permisos de publicación.");
   const appId=crypto.randomUUID();createdAppId=appId;
-  const slugBase=makeSlug(title)||"app";const slug=slugBase+"-"+appId.slice(0,8);
-  const {error:appError}=await supabaseClient.from("apps").insert({
-   id:appId,developer_id:currentUser.id,category_id:categoryId,title,slug,
-   short_description:shortDescription,description,age_rating:age,app_type:type,status:"pending"
-  });
+  const slug=makeSlug(title)+"-"+appId.slice(0,8);
+  const {error:appError}=await supabaseClient.from("apps").insert({id:appId,developer_id:currentUser.id,category_id:categoryId,title,slug,short_description:shortDescription,description,age_rating:age,app_type:type,status:"pending"});
   if(appError)throw appError;
   btn.textContent="Subiendo icono...";
   const iconPath=`${currentUser.id}/${appId}/icon-${Date.now()}.${fileExtension(iconFile)}`;
@@ -342,37 +417,60 @@ el("publishForm").addEventListener("submit",async e=>{
   const {error:imageRowsError}=await supabaseClient.from("app_images").insert(imageRows);if(imageRowsError)throw imageRowsError;
   btn.textContent="Subiendo APK privado...";
   const apkPath=`${currentUser.id}/${appId}/version-${versionCode}-${Date.now()}.apk`;
-  const {error:apkError}=await supabaseClient.storage.from("app-submissions").upload(apkPath,apk,{contentType:"application/vnd.android.package-archive",upsert:false});
+  const {error:apkError}=await supabaseClient.storage.from(APK_BUCKET).upload(apkPath,apk,{contentType:"application/vnd.android.package-archive",upsert:false});
   if(apkError)throw apkError;
   btn.textContent="Registrando versión...";
-  const {error:versionError}=await supabaseClient.from("app_versions").insert({
-   app_id:appId,version,version_code:versionCode,file_url:apkPath,file_size_bytes:apk.size,changelog:changelog||null,status:"pending"
-  });
+  const {error:versionError}=await supabaseClient.from("app_versions").insert({app_id:appId,version,version_code:versionCode,file_url:apkPath,file_size_bytes:apk.size,changelog:changelog||null,status:"pending"});
   if(versionError)throw versionError;
   showMessage("publishMessage","¡Publicación enviada! La aplicación, sus imágenes y su versión quedaron registradas para revisión administrativa. El APK permanece privado.","success");
   el("publishForm").reset();
  }catch(error){
   console.error("Error publicando aplicación:",error);
-  const suffix=createdAppId?` El registro de la aplicación se alcanzó a crear (ID: ${createdAppId}). Revisa el panel de Supabase antes de volver a enviarla para evitar duplicados.`:"";
+  const suffix=createdAppId?` El registro de la aplicación se alcanzó a crear (ID: ${createdAppId}). Revisa Supabase antes de volver a enviarla para evitar duplicados.`:"";
   showMessage("publishMessage","No se pudo completar la publicación: "+error.message+suffix,"error");
  }finally{btn.disabled=false;btn.textContent="Enviar aplicación para revisión"}
 });
 
-// PANEL ADMINISTRATIVO: SOLICITUDES DE DESARROLLADOR
+/* PANEL ADMINISTRATIVO: PESTAÑAS */
+function switchAdminTab(tab){
+ const developers=tab==="developers";
+ el("developersSection").style.display=developers?"block":"none";
+ el("publicationsSection").style.display=developers?"none":"block";
+ el("tabDevelopers").classList.toggle("active",developers);
+ el("tabPublications").classList.toggle("active",!developers);
+ if(!developers)loadAdminApps();
+}
 function showAdminMessage(message,type){showMessage("adminMessage",message,type)}
 function clearAdminMessage(){clearMessage("adminMessage")}
-function closeAdminPanel(){el("adminModal").classList.remove("show");clearAdminMessage()}
+function showAdminAppsMessage(message,type){showMessage("adminAppsMessage",message,type)}
+function clearAdminAppsMessage(){clearMessage("adminAppsMessage")}
+function closeAdminPanel(){el("adminModal").classList.remove("show");clearAdminMessage();clearAdminAppsMessage()}
 function closeAdminOutside(e){if(e.target.id==="adminModal")closeAdminPanel()}
-async function openAdminPanel(){if(!currentUser||currentRole!=="admin"){alert("No tienes autorización para acceder al panel administrativo.");return}el("adminModal").classList.add("show");await loadAdminRequests()}
+async function openAdminPanel(){
+ if(!currentUser||currentRole!=="admin"){alert("No tienes autorización para acceder al panel administrativo.");return}
+ el("adminModal").classList.add("show");
+ switchAdminTab("developers");
+ await loadAdminRequests();
+}
+
+/* SOLICITUDES DE DESARROLLADORES */
 async function loadAdminRequests(){
  const container=el("adminRequests");container.innerHTML='<div class="admin-empty">Cargando solicitudes...</div>';clearAdminMessage();
  if(!currentUser||currentRole!=="admin"){container.innerHTML='<div class="admin-empty">Acceso no autorizado.</div>';return}
  try{
   const {data,error}=await supabaseClient.from("developer_profiles").select("user_id,studio_name,description,website,status,created_at").order("created_at",{ascending:false});if(error)throw error;
-  adminRequests=data||[];el("pendingCount").textContent=adminRequests.filter(x=>x.status==="pending").length;el("approvedCount").textContent=adminRequests.filter(x=>x.status==="approved").length;el("rejectedCount").textContent=adminRequests.filter(x=>x.status==="rejected").length;renderAdminRequests();
+  adminRequests=data||[];
+  el("pendingCount").textContent=adminRequests.filter(x=>x.status==="pending").length;
+  el("approvedCount").textContent=adminRequests.filter(x=>x.status==="approved").length;
+  el("rejectedCount").textContent=adminRequests.filter(x=>x.status==="rejected").length;
+  renderAdminRequests();
  }catch(error){console.error(error);container.innerHTML='<div class="admin-empty">No se pudieron cargar las solicitudes.</div>';showAdminMessage("Error al consultar Supabase: "+error.message,"error")}
 }
-function filterAdminRequests(filter,button){adminFilter=filter;document.querySelectorAll(".admin-toolbar button").forEach(b=>b.classList.remove("active"));button.classList.add("active");renderAdminRequests()}
+function filterAdminRequests(filter,button){
+ adminFilter=filter;
+ el("developerFilters").querySelectorAll("button").forEach(b=>b.classList.remove("active"));
+ button.classList.add("active");renderAdminRequests();
+}
 function renderAdminRequests(){
  const container=el("adminRequests");container.innerHTML="";
  const filtered=adminRequests.filter(r=>adminFilter==="all"||r.status===adminFilter);
@@ -392,16 +490,212 @@ function renderAdminRequests(){
 }
 async function changeDeveloperStatus(userId,newStatus){
  if(!currentUser||currentRole!=="admin"){showAdminMessage("No tienes autorización para realizar esta acción.","error");return}
- const action=newStatus==="approved"?"aprobar":"rechazar";if(!confirm("¿Confirmas que deseas "+action+" esta solicitud?"))return;
+ const action=newStatus==="approved"?"aprobar":"rechazar";
+ if(!confirm("¿Confirmas que deseas "+action+" esta solicitud?"))return;
  try{
-  const {data,error}=await supabaseClient.from("developer_profiles").update({status:newStatus}).eq("user_id",userId).select("user_id,status").single();if(error)throw error;if(!data)throw new Error("No se pudo confirmar el cambio de estado.");
-  showAdminMessage(newStatus==="approved"?"La solicitud fue aprobada correctamente.":"La solicitud fue rechazada correctamente.","success");await loadAdminRequests();
+  const {data,error}=await supabaseClient.from("developer_profiles").update({status:newStatus}).eq("user_id",userId).select("user_id,status").single();
+  if(error)throw error;if(!data)throw new Error("No se pudo confirmar el cambio de estado.");
+  showAdminMessage(newStatus==="approved"?"La solicitud fue aprobada correctamente.":"La solicitud fue rechazada correctamente.","success");
+  await loadAdminRequests();
  }catch(error){console.error(error);showAdminMessage("No se pudo actualizar la solicitud: "+error.message,"error")}
 }
 
+/* PUBLICACIONES: CARGA Y REVISIÓN */
+function getAppVersionForReview(app){
+ const pending=app.versions.find(v=>v.status==="pending");
+ if(pending)return pending;
+ return app.versions.slice().sort((a,b)=>Number(b.version_code)-Number(a.version_code))[0]||null;
+}
+function appMatchesFilter(app,filter){
+ const pendingVersion=app.versions.some(v=>v.status==="pending");
+ const rejectedVersion=app.versions.some(v=>v.status==="rejected");
+ if(filter==="pending")return app.status==="pending"||(app.status==="approved"&&pendingVersion);
+ if(filter==="approved")return app.status==="approved"&&!pendingVersion;
+ if(filter==="rejected")return app.status==="rejected"||(app.status==="approved"&&rejectedVersion);
+ return true;
+}
+async function loadAdminApps(){
+ const container=el("adminApps");
+ container.innerHTML='<div class="admin-empty">Cargando publicaciones...</div>';
+ clearAdminAppsMessage();
+ if(!currentUser||currentRole!=="admin"){container.innerHTML='<div class="admin-empty">Acceso no autorizado.</div>';return}
+ try{
+  const [appsResult,devResult,catResult,versionsResult,imagesResult]=await Promise.all([
+   supabaseClient.from("apps").select("id,developer_id,category_id,title,slug,short_description,description,icon_url,age_rating,app_type,status,created_at").order("created_at",{ascending:false}),
+   supabaseClient.from("developer_profiles").select("user_id,studio_name"),
+   supabaseClient.from("categories").select("id,name"),
+   supabaseClient.from("app_versions").select("id,app_id,version,version_code,file_url,file_size_bytes,changelog,status,created_at").order("version_code",{ascending:false}),
+   supabaseClient.from("app_images").select("id,app_id,image_url,image_type,position").order("position",{ascending:true})
+  ]);
+  if(appsResult.error)throw appsResult.error;
+  if(devResult.error)throw devResult.error;
+  if(catResult.error)throw catResult.error;
+  if(versionsResult.error)throw versionsResult.error;
+  if(imagesResult.error)throw imagesResult.error;
+
+  const devMap=new Map((devResult.data||[]).map(d=>[d.user_id,d.studio_name]));
+  const catMap=new Map((catResult.data||[]).map(c=>[c.id,c.name]));
+  const versionMap=new Map(),imageMap=new Map();
+
+  (versionsResult.data||[]).forEach(v=>{
+   if(!versionMap.has(v.app_id))versionMap.set(v.app_id,[]);
+   versionMap.get(v.app_id).push(v);
+  });
+  (imagesResult.data||[]).forEach(img=>{
+   if(!imageMap.has(img.app_id))imageMap.set(img.app_id,[]);
+   imageMap.get(img.app_id).push(img);
+  });
+
+  adminApps=(appsResult.data||[]).map(a=>({
+   ...a,
+   studio_name:devMap.get(a.developer_id)||"Desarrollador no identificado",
+   category_name:catMap.get(a.category_id)||"Sin categoría",
+   versions:versionMap.get(a.id)||[],
+   images:imageMap.get(a.id)||[]
+  }));
+  updateAdminAppCounters();
+  renderAdminApps();
+ }catch(error){
+  console.error("Error cargando publicaciones:",error);
+  container.innerHTML='<div class="admin-empty">No se pudieron cargar las publicaciones.</div>';
+  showAdminAppsMessage("Error al consultar las publicaciones: "+error.message,"error");
+ }
+}
+function updateAdminAppCounters(){
+ el("appsPendingCount").textContent=adminApps.filter(a=>appMatchesFilter(a,"pending")).length;
+ el("appsApprovedCount").textContent=adminApps.filter(a=>appMatchesFilter(a,"approved")).length;
+ el("appsRejectedCount").textContent=adminApps.filter(a=>appMatchesFilter(a,"rejected")).length;
+}
+function filterAdminApps(filter,button){
+ adminAppsFilter=filter;
+ el("publicationFilters").querySelectorAll("button").forEach(b=>b.classList.remove("active"));
+ button.classList.add("active");
+ renderAdminApps();
+}
+function renderAdminApps(){
+ const container=el("adminApps");container.innerHTML="";
+ const filtered=adminApps.filter(a=>appMatchesFilter(a,adminAppsFilter));
+ if(!filtered.length){
+  container.innerHTML=`<div class="admin-empty">${adminApps.length?"No hay publicaciones en esta categoría.":"Todavía no hay aplicaciones ni juegos enviados."}</div>`;
+  return;
+ }
+ filtered.forEach(app=>{
+  const card=document.createElement("article");card.className="publication-card";
+  const version=getAppVersionForReview(app);
+  const isNew=app.status==="pending";
+  const pendingVersion=app.versions.find(v=>v.status==="pending");
+  const statusLabel=isNew?"Aplicación pendiente":pendingVersion?"Actualización pendiente":app.status==="approved"?"Publicada":"Rechazada";
+  const statusClass=isNew||pendingVersion?"status-pending":app.status==="approved"?"status-approved":"status-rejected";
+  const date=app.created_at?new Date(app.created_at).toLocaleString("es-CO"):"No disponible";
+  const icon=app.icon_url||app.images.find(i=>i.image_type==="icon")?.image_url||"";
+  const screenshots=app.images.filter(i=>i.image_type==="screenshot");
+  const apkSize=version?.file_size_bytes?`${(Number(version.file_size_bytes)/1024/1024).toFixed(2)} MB`:"No indicado";
+  const versionHtml=version?`
+   <div class="publication-version">
+    <strong>Versión enviada:</strong> ${escapeHTML(version.version)} (código ${escapeHTML(version.version_code)})<br>
+    <strong>Estado de versión:</strong> ${escapeHTML(version.status)}<br>
+    <strong>Tamaño del APK:</strong> ${escapeHTML(apkSize)}<br>
+    <strong>Novedades:</strong> ${escapeHTML(version.changelog||"Sin descripción")}<br>
+    <strong>Archivo privado:</strong> ${escapeHTML(version.file_url||"No registrado")}
+    <div style="margin-top:8px"><button class="primary-btn" type="button" onclick="openAdminApk('${app.id}','${version.id}')">Consultar APK</button></div>
+   </div>`:'<div class="publication-version">No se encontró una versión registrada para esta publicación.</div>';
+
+  card.innerHTML=`
+   <div class="publication-top">
+    ${icon?`<img class="publication-icon" src="${escapeHTML(icon)}" alt="Icono">`:'<div class="publication-icon" style="display:grid;place-items:center;font-size:28px">📱</div>'}
+    <div class="publication-info">
+     <h3>${escapeHTML(app.title)}</h3>
+     <div class="publication-meta">
+      ${app.app_type==="game"?"Juego":"Aplicación"} · ${escapeHTML(app.category_name)} · ${escapeHTML(app.age_rating||"Sin clasificación")}<br>
+      Desarrollador: ${escapeHTML(app.studio_name)}<br>
+      Enviado: ${escapeHTML(date)}
+     </div>
+     <div class="publication-status ${statusClass}">${statusLabel}</div>
+    </div>
+   </div>
+   <div class="publication-description"><strong>Descripción corta:</strong> ${escapeHTML(app.short_description||"Sin descripción corta")}<br><br><strong>Descripción completa:</strong><br>${escapeHTML(app.description||"Sin descripción")}</div>
+   ${screenshots.length?`<div class="publication-meta" style="margin-top:14px">Capturas de pantalla</div><div class="publication-images">${screenshots.map(img=>`<img src="${escapeHTML(img.image_url)}" alt="Captura de ${escapeHTML(app.title)}" loading="lazy">`).join("")}</div>`:""}
+   ${versionHtml}
+   <div class="request-actions" id="actions-${app.id}"></div>
+  `;
+  const actions=card.querySelector(`#actions-${CSS.escape("actions-"+app.id)}`);
+  if(isNew&&pendingVersion){
+   const yes=document.createElement("button");yes.className="approve";yes.textContent="Aprobar publicación";yes.onclick=()=>moderateApp(app.id,"approved");
+   const no=document.createElement("button");no.className="reject";no.textContent="Rechazar publicación";no.onclick=()=>moderateApp(app.id,"rejected");
+   actions.append(yes,no);
+  }else if(app.status==="approved"&&pendingVersion){
+   const yes=document.createElement("button");yes.className="approve";yes.textContent="Aprobar actualización";yes.onclick=()=>moderateVersion(app.id,pendingVersion.id,"approved");
+   const no=document.createElement("button");no.className="reject";no.textContent="Rechazar actualización";no.onclick=()=>moderateVersion(app.id,pendingVersion.id,"rejected");
+   actions.append(yes,no);
+  }else{
+   const note=document.createElement("span");note.className="request-email";note.textContent=app.status==="approved"?"Esta aplicación está publicada. No tiene actualizaciones pendientes.":"Esta publicación ya fue revisada.";
+   actions.appendChild(note);
+  }
+  container.appendChild(card);
+ });
+}
+
+/* CREA UN ENLACE TEMPORAL PARA QUE EL ADMIN PUEDA CONSULTAR EL APK PRIVADO */
+async function openAdminApk(appId,versionId){
+ if(!currentUser||currentRole!=="admin"){alert("Acceso no autorizado.");return}
+ const app=adminApps.find(a=>a.id===appId);
+ const version=app?.versions.find(v=>v.id===versionId);
+ if(!version?.file_url){alert("No se encontró la ruta del APK.");return}
+ try{
+  const {data,error}=await supabaseClient.storage.from(APK_BUCKET).createSignedUrl(version.file_url,600);
+  if(error)throw error;
+  if(!data?.signedUrl)throw new Error("No se pudo crear el enlace temporal.");
+  window.open(data.signedUrl,"_blank","noopener,noreferrer");
+ }catch(error){console.error(error);alert("No se pudo consultar el APK: "+error.message)}
+}
+
+/* APROBAR O RECHAZAR UNA APLICACIÓN NUEVA */
+async function moderateApp(appId,newStatus){
+ if(!currentUser||currentRole!=="admin"){showAdminAppsMessage("No tienes autorización para realizar esta acción.","error");return}
+ const action=newStatus==="approved"?"aprobar":"rechazar";
+ if(!confirm(`¿Confirmas que deseas ${action} esta aplicación?`))return;
+ try{
+  const app=adminApps.find(a=>a.id===appId);
+  if(!app)throw new Error("No se encontró la publicación.");
+  const pendingVersion=app.versions.find(v=>v.status==="pending");
+  if(!pendingVersion)throw new Error("No se encontró una versión pendiente para esta aplicación.");
+
+  const {error:versionError}=await supabaseClient.from("app_versions").update({status:newStatus}).eq("id",pendingVersion.id);
+  if(versionError)throw versionError;
+
+  const {error:appError}=await supabaseClient.from("apps").update({status:newStatus,updated_at:new Date().toISOString()}).eq("id",appId);
+  if(appError)throw appError;
+
+  showAdminAppsMessage(newStatus==="approved"?"La aplicación y su versión fueron aprobadas.":"La aplicación y su versión fueron rechazadas.","success");
+  await loadAdminApps();
+ }catch(error){
+  console.error(error);
+  showAdminAppsMessage("No se pudo completar la revisión: "+error.message+" Revisa el estado de la aplicación y su versión antes de volver a intentarlo.","error");
+ }
+}
+
+/* APROBAR O RECHAZAR UNA ACTUALIZACIÓN DE UNA APP YA PUBLICADA */
+async function moderateVersion(appId,versionId,newStatus){
+ if(!currentUser||currentRole!=="admin"){showAdminAppsMessage("No tienes autorización para realizar esta acción.","error");return}
+ const action=newStatus==="approved"?"aprobar":"rechazar";
+ if(!confirm(`¿Confirmas que deseas ${action} esta actualización?`))return;
+ try{
+  const {data,error}=await supabaseClient.from("app_versions").update({status:newStatus}).eq("id",versionId).select("id,status").single();
+  if(error)throw error;if(!data)throw new Error("No se pudo confirmar el cambio.");
+  showAdminAppsMessage(newStatus==="approved"?"La actualización fue aprobada.":"La actualización fue rechazada.","success");
+  await loadAdminApps();
+ }catch(error){console.error(error);showAdminAppsMessage("No se pudo revisar la actualización: "+error.message,"error")}
+}
+
+/* INICIO */
 async function initializeAuth(){
- const {data,error}=await supabaseClient.auth.getSession();if(error)console.error("Error recuperando sesión:",error);await updateAuthUI(data?.session?.user||null);
- supabaseClient.auth.onAuthStateChange((event,session)=>{const user=session?.user||null;setTimeout(()=>updateAuthUI(user),0)});
+ const {data,error}=await supabaseClient.auth.getSession();
+ if(error)console.error("Error recuperando sesión:",error);
+ await updateAuthUI(data?.session?.user||null);
+ supabaseClient.auth.onAuthStateChange((event,session)=>{
+  const user=session?.user||null;
+  setTimeout(()=>updateAuthUI(user),0);
+ });
 }
 el("appType").addEventListener("change",loadPublishCategories);
 loadStoreApps();
