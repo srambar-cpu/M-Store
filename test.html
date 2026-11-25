@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEON CLOCK</title>
+<meta name="theme-color" content="#10131b">
+<title>TEXT FORMAT STUDIO</title>
 
 <style>
 * {
@@ -13,120 +14,708 @@
 
 body {
     margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #080b14;
-    color: white;
+    background: #0d1018;
+    color: #f1f3fa;
     font-family: Arial, sans-serif;
 }
 
-.clock {
-    width: 90%;
-    max-width: 430px;
-    padding: 35px 20px;
+header {
+    padding: 22px 16px;
+    background: #151a27;
+    border-bottom: 1px solid #293247;
     text-align: center;
-    background: #111827;
-    border: 1px solid #273b60;
-    border-radius: 22px;
-    box-shadow: 0 0 35px #1764ff22;
 }
 
-h1 {
-    color: #55aaff;
-    letter-spacing: 5px;
-    font-size: 22px;
+header h1 {
+    margin: 0;
+    color: #7292ff;
+    font-size: 23px;
+    letter-spacing: 2px;
 }
 
-#time {
-    margin: 35px 0 15px;
-    font-size: clamp(42px, 12vw, 65px);
-    font-weight: bold;
-    color: #61c5ff;
-    text-shadow: 0 0 15px #168bff;
-    font-variant-numeric: tabular-nums;
+header p {
+    color: #929bb0;
+    font-size: 13px;
 }
 
-#date {
-    color: #a9b9d5;
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    padding: 18px;
+}
+
+.section {
+    background: #171d2b;
+    border: 1px solid #2b354b;
+    border-radius: 13px;
+    padding: 17px;
+    margin-bottom: 16px;
+}
+
+h2 {
     font-size: 16px;
+    color: #8ba5ff;
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    color: #aab4c9;
+    font-size: 13px;
+    margin: 13px 0 7px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #35415b;
+    border-radius: 9px;
+    background: #101622;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #7190ff;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
 }
 
 button {
-    margin-top: 30px;
-    padding: 13px 20px;
     border: none;
-    border-radius: 9px;
-    background: #2878ed;
+    padding: 11px 14px;
+    border-radius: 8px;
+    background: #526ff0;
     color: white;
     font-weight: bold;
     cursor: pointer;
+    font-size: 13px;
 }
 
-.status {
-    margin-top: 25px;
-    color: #5ce6a3;
-    font-size: 12px;
-    letter-spacing: 2px;
+button:active {
+    transform: scale(.97);
 }
+
+button.secondary {
+    background: #303b52;
+}
+
+button.danger {
+    background: #a83e50;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.row > * {
+    flex: 1;
+    min-width: 0;
+}
+
+.colors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 12px;
+}
+
+.color {
+    width: 33px;
+    height: 33px;
+    padding: 0;
+    border: 2px solid #ffffff55;
+    border-radius: 50%;
+}
+
+.color-picker {
+    height: 43px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.preview {
+    min-height: 80px;
+    padding: 18px;
+    background: #0c111c;
+    border: 1px solid #35415b;
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+    font-size: 18px;
+}
+
+.output {
+    min-height: 110px;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+.tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.tools button {
+    flex: 1;
+    min-width: 65px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox input {
+    width: auto;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #68748b;
+    font-size: 12px;
+}
+
+.notice {
+    color: #a9b8d5;
+    background: #222c40;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="clock">
+<header>
+    <h1>TEXT FORMAT STUDIO</h1>
+    <p>Text • Colors • Formats • Creativity</p>
+</header>
 
-    <h1>NEON CLOCK</h1>
+<main class="container">
 
-    <div id="time">00:00:00</div>
+    <!-- EDITOR -->
 
-    <div id="date">Cargando fecha...</div>
+    <section class="section">
+        <h2>01. Editor de texto</h2>
 
-    <button onclick="toggleFormat()">
-        Cambiar formato 12/24
-    </button>
+        <label>Escribe tu texto</label>
+        <textarea id="textInput"
+        placeholder="Escribe algo aquí...">Hola, mundo!</textarea>
 
-    <div class="status">
-        ● SISTEMA ACTIVO
-    </div>
+        <div class="tools">
+            <button onclick="setFormat('bold')"><b>B</b></button>
+            <button onclick="setFormat('italic')"><i>I</i></button>
+            <button onclick="setFormat('underline')"><u>U</u></button>
+            <button onclick="setFormat('strike')"><s>S</s></button>
+            <button class="secondary" onclick="resetFormat()">Limpiar formato</button>
+        </div>
+    </section>
 
-</div>
+    <!-- PLATFORM -->
+
+    <section class="section">
+        <h2>02. Plataforma de destino</h2>
+
+        <label>Selecciona un formato</label>
+        <select id="platform">
+            <option value="html">HTML</option>
+            <option value="discord">Discord (Markdown)</option>
+            <option value="minecraft">Minecraft (§ códigos)</option>
+            <option value="custom">Formato personalizado</option>
+            <option value="plain">Texto normal</option>
+        </select>
+
+        <div id="customSettings" class="hidden">
+            <label>Plantilla personalizada</label>
+            <input id="customTemplate"
+            value="/color {color} {text}"
+            placeholder="Ejemplo: /color {color} {text}">
+
+            <div class="notice">
+                Usa {color} para insertar el HEX y {text} para insertar el texto.
+            </div>
+        </div>
+
+        <div id="platformNotice" class="notice">
+            HTML permite aplicar colores directamente al texto.
+        </div>
+    </section>
+
+    <!-- COLORS -->
+
+    <section class="section">
+        <h2>03. Selector de colores</h2>
+
+        <div class="row">
+            <div>
+                <label>Color HEX</label>
+                <input id="hex" value="#7292FF" maxlength="7">
+            </div>
+
+            <div>
+                <label>Selector visual</label>
+                <input type="color" id="picker"
+                class="color-picker" value="#7292ff">
+            </div>
+        </div>
+
+        <label>Colores rápidos</label>
+
+        <div class="colors">
+            <button class="color" style="background:#ff3333"
+            onclick="chooseColor('#FF3333')"></button>
+
+            <button class="color" style="background:#33dd77"
+            onclick="chooseColor('#33DD77')"></button>
+
+            <button class="color" style="background:#3388ff"
+            onclick="chooseColor('#3388FF')"></button>
+
+            <button class="color" style="background:#ffff33"
+            onclick="chooseColor('#FFFF33')"></button>
+
+            <button class="color" style="background:#bb55ff"
+            onclick="chooseColor('#BB55FF')"></button>
+
+            <button class="color" style="background:#ff55aa"
+            onclick="chooseColor('#FF55AA')"></button>
+
+            <button class="color" style="background:#ffffff"
+            onclick="chooseColor('#FFFFFF')"></button>
+
+            <button class="color" style="background:#888888"
+            onclick="chooseColor('#888888')"></button>
+        </div>
+
+        <label>Valores RGB y HSL</label>
+        <div class="row">
+            <input id="rgb" readonly value="RGB">
+            <input id="hsl" readonly value="HSL">
+        </div>
+    </section>
+
+    <!-- GRADIENT -->
+
+    <section class="section">
+        <h2>04. Degradado</h2>
+
+        <div class="row">
+            <div>
+                <label>Color inicial</label>
+                <input type="color" id="gradient1"
+                class="color-picker" value="#3977ff">
+            </div>
+
+            <div>
+                <label>Color final</label>
+                <input type="color" id="gradient2"
+                class="color-picker" value="#c13cff">
+            </div>
+        </div>
+
+        <label class="checkbox">
+            <input type="checkbox" id="gradientEnabled">
+            Activar degradado
+        </label>
+
+        <div id="gradientPreview"
+        style="height:30px;border-radius:8px;margin-top:12px;
+        background:linear-gradient(90deg,#3977ff,#c13cff)">
+        </div>
+    </section>
+
+    <!-- PREVIEW -->
+
+    <section class="section">
+        <h2>05. Vista previa</h2>
+
+        <div id="preview" class="preview">
+            Hola, mundo!
+        </div>
+    </section>
+
+    <!-- OUTPUT -->
+
+    <section class="section">
+        <h2>06. Código generado</h2>
+
+        <textarea id="output" class="output" readonly></textarea>
+
+        <div class="tools">
+            <button onclick="copyOutput()">Copiar código</button>
+            <button class="secondary" onclick="copyPreview()">Copiar texto</button>
+            <button class="secondary" onclick="generate()">Actualizar</button>
+        </div>
+
+        <div id="status" class="notice">
+            Listo para generar.
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>07. Información</h2>
+        <p style="font-size:13px;color:#aab4c9;line-height:1.6">
+            TEXT FORMAT STUDIO permite crear códigos de texto,
+            colores y formatos para diferentes plataformas.
+            Cada sistema tiene sus propias reglas de interpretación.
+        </p>
+        <button class="danger" onclick="resetAll()">
+            Restablecer editor
+        </button>
+    </section>
+
+</main>
+
+<footer class="footer">
+    TEXT FORMAT STUDIO v1.0<br>
+    MYTHERION STUDIOS © 2026
+</footer>
 
 <script>
-let format24 = true;
 
-function updateClock() {
+const $ = id => document.getElementById(id);
 
-    const now = new Date();
+let formats = {
+    bold: false,
+    italic: false,
+    underline: false,
+    strike: false
+};
 
-    const options = {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: !format24
+const notices = {
+    html: "HTML permite aplicar colores, estilos y degradados directamente.",
+    discord: "Discord admite Markdown para negrita, cursiva y otros estilos. No admite colores HEX personalizados en mensajes normales.",
+    minecraft: "Minecraft utiliza códigos de color propios. La compatibilidad depende de la edición, servidor y permisos.",
+    custom: "Puedes crear tu propio formato usando las variables {color} y {text}.",
+    plain: "Texto normal: no se aplican códigos de color ni estilos."
+};
+
+function validHex(value) {
+    return /^#[0-9A-Fa-f]{6}$/.test(value);
+}
+
+function chooseColor(color) {
+    $("hex").value = color;
+    $("picker").value = color;
+    generate();
+}
+
+function setFormat(type) {
+    formats[type] = !formats[type];
+    generate();
+}
+
+function resetFormat() {
+    Object.keys(formats).forEach(key => {
+        formats[key] = false;
+    });
+    generate();
+}
+
+function colorData(hex) {
+    const r = parseInt(hex.slice(1,3),16);
+    const g = parseInt(hex.slice(3,5),16);
+    const b = parseInt(hex.slice(5,7),16);
+
+    const max = Math.max(r,g,b)/255;
+    const min = Math.min(r,g,b)/255;
+    const delta = max-min;
+
+    let h = 0;
+    let s = 0;
+    let l = (max+min)/2;
+
+    if (delta !== 0) {
+        s = delta/(1-Math.abs(2*l-1));
+
+        switch(max) {
+            case r/255:
+                h = 60*(((g-b)/255/delta)%6);
+                break;
+            case g/255:
+                h = 60*((b-r)/255/delta+2);
+                break;
+            default:
+                h = 60*((r-g)/255/delta+4);
+        }
+    }
+
+    h = (h+360)%360;
+
+    return {
+        rgb: `rgb(${r}, ${g}, ${b})`,
+        hsl: `hsl(${Math.round(h)}, ${Math.round(s*100)}%, ${Math.round(l*100)}%)`
+    };
+}
+
+function updateColor() {
+    let hex = $("hex").value.trim();
+
+    if (!validHex(hex)) {
+        $("rgb").value = "HEX inválido";
+        $("hsl").value = "HEX inválido";
+        return false;
+    }
+
+    $("picker").value = hex;
+
+    const data = colorData(hex);
+
+    $("rgb").value = data.rgb;
+    $("hsl").value = data.hsl;
+
+    return true;
+}
+
+function escapeHTML(text) {
+    return text.replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[char]);
+}
+
+function styledText() {
+    let result = escapeHTML($("textInput").value);
+
+    if (formats.bold) result = `<b>${result}</b>`;
+    if (formats.italic) result = `<i>${result}</i>`;
+    if (formats.underline) result = `<u>${result}</u>`;
+    if (formats.strike) result = `<s>${result}</s>`;
+
+    return result;
+}
+
+function discordText(text) {
+    let result = text;
+
+    if (formats.bold) result = `**${result}**`;
+    if (formats.italic) result = `*${result}*`;
+    if (formats.underline) result = `__${result}__`;
+    if (formats.strike) result = `~~${result}~~`;
+
+    return result;
+}
+
+function minecraftText(text) {
+    let result = text;
+    const color = $("hex").value.toUpperCase();
+
+    const minecraftColors = {
+        "#000000": "§0",
+        "#0000AA": "§1",
+        "#00AA00": "§2",
+        "#00AAAA": "§3",
+        "#AA0000": "§4",
+        "#AA00AA": "§5",
+        "#FFAA00": "§6",
+        "#AAAAAA": "§7",
+        "#555555": "§8",
+        "#5555FF": "§9",
+        "#55FF55": "§a",
+        "#55FFFF": "§b",
+        "#FF5555": "§c",
+        "#FF55FF": "§d",
+        "#FFFF55": "§e",
+        "#FFFFFF": "§f"
     };
 
-    document.getElementById("time").textContent =
-        new Intl.DateTimeFormat("es-CO", options)
-        .format(now);
+    const code = minecraftColors[color];
 
-    document.getElementById("date").textContent =
-        new Intl.DateTimeFormat("es-CO", {
-            weekday: "long",
-            day: "numeric",
-            month: "long",
-            year: "numeric"
-        }).format(now);
+    if (code) result = code + result;
+
+    if (formats.bold) result = "§l" + result;
+    if (formats.italic) result = "§o" + result;
+    if (formats.underline) result = "§n" + result;
+    if (formats.strike) result = "§m" + result;
+
+    return result + "§r";
 }
 
-function toggleFormat() {
-    format24 = !format24;
-    updateClock();
+function generate() {
+
+    const text = $("textInput").value;
+    const platform = $("platform").value;
+    const hex = $("hex").value.trim();
+
+    if (!updateColor()) {
+        $("status").textContent = "Introduce un HEX válido, por ejemplo #FF0000.";
+        return;
+    }
+
+    const gradient = $("gradientEnabled").checked;
+    const c1 = $("gradient1").value;
+    const c2 = $("gradient2").value;
+
+    $("gradientPreview").style.background =
+        `linear-gradient(90deg,${c1},${c2})`;
+
+    $("platformNotice").textContent = notices[platform];
+
+    let output = "";
+    let previewHTML = "";
+
+    if (platform === "html") {
+
+        let style = gradient
+            ? `background:linear-gradient(90deg,${c1},${c2});color:transparent;background-clip:text;-webkit-background-clip:text;`
+            : `color:${hex};`;
+
+        if (formats.bold) style += "font-weight:bold;";
+        if (formats.italic) style += "font-style:italic;";
+        if (formats.underline || formats.strike) {
+            style += "text-decoration:";
+            if (formats.underline) style += "underline ";
+            if (formats.strike) style += "line-through";
+            style += ";";
+        }
+
+        output = `<span style="${style}">${escapeHTML(text)}</span>`;
+
+        previewHTML = output;
+
+    } else if (platform === "discord") {
+
+        output = discordText(text);
+
+        previewHTML = escapeHTML(text);
+
+        if (formats.bold) previewHTML = `<b>${previewHTML}</b>`;
+        if (formats.italic) previewHTML = `<i>${previewHTML}</i>`;
+        if (formats.underline) previewHTML = `<u>${previewHTML}</u>`;
+        if (formats.strike) previewHTML = `<s>${previewHTML}</s>`;
+
+    } else if (platform === "minecraft") {
+
+        output = minecraftText(text);
+        previewHTML = escapeHTML(text);
+
+    } else if (platform === "custom") {
+
+        const template = $("customTemplate").value;
+
+        output = template
+            .replaceAll("{color}", hex)
+            .replaceAll("{text}", text);
+
+        previewHTML = escapeHTML(text);
+
+    } else {
+
+        output = text;
+        previewHTML = escapeHTML(text);
+
+    }
+
+    if (platform !== "html" && platform !== "discord") {
+        if (platform === "plain") {
+            previewHTML = escapeHTML(text);
+        }
+    }
+
+    $("output").value = output;
+    $("preview").innerHTML = previewHTML || "Vista previa vacía";
+
+    if (platform !== "html" && platform !== "discord") {
+        $("preview").style.color = hex;
+    } else {
+        $("preview").style.color = "";
+    }
+
+    if (platform === "minecraft") {
+        $("preview").style.color = hex;
+    }
+
+    $("status").textContent = "Código generado correctamente.";
 }
 
-updateClock();
-setInterval(updateClock, 1000);
+async function copyOutput() {
+    const value = $("output").value;
+
+    if (!value) return;
+
+    try {
+        await navigator.clipboard.writeText(value);
+        $("status").textContent = "¡Código copiado!";
+    } catch {
+        $("output").select();
+        $("status").textContent =
+            "Selecciona y copia el código manualmente.";
+    }
+}
+
+async function copyPreview() {
+    try {
+        await navigator.clipboard.writeText($("textInput").value);
+        $("status").textContent = "¡Texto copiado!";
+    } catch {
+        $("status").textContent = "No se pudo copiar automáticamente.";
+    }
+}
+
+function resetAll() {
+    $("textInput").value = "";
+    $("hex").value = "#7292FF";
+    $("picker").value = "#7292ff";
+    $("platform").value = "html";
+    $("gradientEnabled").checked = false;
+
+    formats = {
+        bold: false,
+        italic: false,
+        underline: false,
+        strike: false
+    };
+
+    generate();
+}
+
+$("hex").addEventListener("input", generate);
+
+$("picker").addEventListener("input", () => {
+    $("hex").value = $("picker").value.toUpperCase();
+    generate();
+});
+
+$("textInput").addEventListener("input", generate);
+
+$("platform").addEventListener("change", () => {
+    $("customSettings").classList.toggle(
+        "hidden",
+        $("platform").value !== "custom"
+    );
+    generate();
+});
+
+$("customTemplate").addEventListener("input", generate);
+
+$("gradientEnabled").addEventListener("change", generate);
+$("gradient1").addEventListener("input", generate);
+$("gradient2").addEventListener("input", generate);
+
+generate();
+
 </script>
 
 </body>
