@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyNotes</title>
+<title>NEON CLOCK</title>
 
 <style>
 * {
@@ -13,150 +13,120 @@
 
 body {
     margin: 0;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background: #10131b;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #080b14;
     color: white;
+    font-family: Arial, sans-serif;
 }
 
-.container {
-    max-width: 600px;
-    margin: 40px auto;
+.clock {
+    width: 90%;
+    max-width: 430px;
+    padding: 35px 20px;
+    text-align: center;
+    background: #111827;
+    border: 1px solid #273b60;
+    border-radius: 22px;
+    box-shadow: 0 0 35px #1764ff22;
 }
 
 h1 {
-    color: #6c8cff;
+    color: #55aaff;
+    letter-spacing: 5px;
+    font-size: 22px;
 }
 
-textarea {
-    width: 100%;
-    height: 130px;
-    padding: 15px;
-    border-radius: 12px;
-    border: 1px solid #343b4c;
-    background: #1c2230;
-    color: white;
-    resize: vertical;
+#time {
+    margin: 35px 0 15px;
+    font-size: clamp(42px, 12vw, 65px);
+    font-weight: bold;
+    color: #61c5ff;
+    text-shadow: 0 0 15px #168bff;
+    font-variant-numeric: tabular-nums;
+}
+
+#date {
+    color: #a9b9d5;
     font-size: 16px;
 }
 
 button {
-    padding: 12px 18px;
-    margin-top: 12px;
+    margin-top: 30px;
+    padding: 13px 20px;
     border: none;
     border-radius: 9px;
-    background: #5578ff;
+    background: #2878ed;
     color: white;
     font-weight: bold;
     cursor: pointer;
 }
 
-button:hover {
-    background: #3e60df;
-}
-
-.note {
-    background: #1c2230;
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 12px;
-    border: 1px solid #30394c;
-    overflow-wrap: anywhere;
-}
-
-.delete {
-    background: #e34d5b;
-    margin-left: 8px;
-}
-
-small {
-    color: #929db1;
+.status {
+    margin-top: 25px;
+    color: #5ce6a3;
+    font-size: 12px;
+    letter-spacing: 2px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="clock">
 
-    <h1>MyNotes ✍️</h1>
-    <p>Tu pequeño espacio para guardar ideas.</p>
+    <h1>NEON CLOCK</h1>
 
-    <textarea id="noteInput"
-    placeholder="Escribe algo aquí..."></textarea>
+    <div id="time">00:00:00</div>
 
-    <button onclick="saveNote()">Guardar nota</button>
+    <div id="date">Cargando fecha...</div>
 
-    <h2>Mis notas</h2>
+    <button onclick="toggleFormat()">
+        Cambiar formato 12/24
+    </button>
 
-    <div id="notes"></div>
+    <div class="status">
+        ● SISTEMA ACTIVO
+    </div>
 
 </div>
 
 <script>
-let notes = JSON.parse(
-    localStorage.getItem("myNotes") || "[]"
-);
+let format24 = true;
 
-function renderNotes() {
-    const container = document.getElementById("notes");
-    container.innerHTML = "";
+function updateClock() {
 
-    notes.forEach((note, index) => {
-        const div = document.createElement("div");
-        div.className = "note";
+    const now = new Date();
 
-        const content = document.createElement("p");
-        content.textContent = note;
+    const options = {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: !format24
+    };
 
-        const date = document.createElement("small");
-        date.textContent = "Nota #" + (index + 1);
+    document.getElementById("time").textContent =
+        new Intl.DateTimeFormat("es-CO", options)
+        .format(now);
 
-        const button = document.createElement("button");
-        button.className = "delete";
-        button.textContent = "Eliminar";
-
-        button.onclick = () => deleteNote(index);
-
-        div.append(content, date, document.createElement("br"), button);
-        container.appendChild(div);
-    });
+    document.getElementById("date").textContent =
+        new Intl.DateTimeFormat("es-CO", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        }).format(now);
 }
 
-function saveNote() {
-    const input = document.getElementById("noteInput");
-    const text = input.value.trim();
-
-    if (!text) {
-        alert("Escribe una nota primero.");
-        return;
-    }
-
-    notes.unshift(text);
-
-    localStorage.setItem(
-        "myNotes",
-        JSON.stringify(notes)
-    );
-
-    input.value = "";
-    renderNotes();
+function toggleFormat() {
+    format24 = !format24;
+    updateClock();
 }
 
-function deleteNote(index) {
-    if (confirm("¿Eliminar esta nota?")) {
-        notes.splice(index, 1);
-
-        localStorage.setItem(
-            "myNotes",
-            JSON.stringify(notes)
-        );
-
-        renderNotes();
-    }
-}
-
-renderNotes();
+updateClock();
+setInterval(updateClock, 1000);
 </script>
 
 </body>
