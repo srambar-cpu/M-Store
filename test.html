@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyNotes</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #10131b;
+    color: white;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+h1 {
+    color: #6c8cff;
+}
+
+textarea {
+    width: 100%;
+    height: 130px;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #343b4c;
+    background: #1c2230;
+    color: white;
+    resize: vertical;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 18px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 9px;
+    background: #5578ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3e60df;
+}
+
+.note {
+    background: #1c2230;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 12px;
+    border: 1px solid #30394c;
+    overflow-wrap: anywhere;
+}
+
+.delete {
+    background: #e34d5b;
+    margin-left: 8px;
+}
+
+small {
+    color: #929db1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>MyNotes ✍️</h1>
+    <p>Tu pequeño espacio para guardar ideas.</p>
+
+    <textarea id="noteInput"
+    placeholder="Escribe algo aquí..."></textarea>
+
+    <button onclick="saveNote()">Guardar nota</button>
+
+    <h2>Mis notas</h2>
+
+    <div id="notes"></div>
+
+</div>
+
+<script>
+let notes = JSON.parse(
+    localStorage.getItem("myNotes") || "[]"
+);
+
+function renderNotes() {
+    const container = document.getElementById("notes");
+    container.innerHTML = "";
+
+    notes.forEach((note, index) => {
+        const div = document.createElement("div");
+        div.className = "note";
+
+        const content = document.createElement("p");
+        content.textContent = note;
+
+        const date = document.createElement("small");
+        date.textContent = "Nota #" + (index + 1);
+
+        const button = document.createElement("button");
+        button.className = "delete";
+        button.textContent = "Eliminar";
+
+        button.onclick = () => deleteNote(index);
+
+        div.append(content, date, document.createElement("br"), button);
+        container.appendChild(div);
+    });
+}
+
+function saveNote() {
+    const input = document.getElementById("noteInput");
+    const text = input.value.trim();
+
+    if (!text) {
+        alert("Escribe una nota primero.");
+        return;
+    }
+
+    notes.unshift(text);
+
+    localStorage.setItem(
+        "myNotes",
+        JSON.stringify(notes)
+    );
+
+    input.value = "";
+    renderNotes();
+}
+
+function deleteNote(index) {
+    if (confirm("¿Eliminar esta nota?")) {
+        notes.splice(index, 1);
+
+        localStorage.setItem(
+            "myNotes",
+            JSON.stringify(notes)
+        );
+
+        renderNotes();
+    }
+}
+
+renderNotes();
+</script>
+
+</body>
+</html>
